@@ -29,6 +29,6 @@ setup(
         'numpy>=1.26.4',
         'scipy>=1.13.0',
         'statsmodels>=0.14.2',
-        'mpi4pt>=3.1.6',
+        'mpi4py>=3.1.6',
     ],
 )
