@@ -18,7 +18,7 @@ It includes a robust double assurance procedure to enhance stability and reliabi
 You can install SubsampWinner using pip:
 
 ```bash
-pip install subsamp
+pip install subsampwinner
 ```
 
 ## Quick Start
