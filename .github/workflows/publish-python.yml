@@ -33,18 +33,6 @@ jobs:
         run: |
           python setup.py sdist bdist_wheel
 
-      - name: Check dist contents
-        run: |
-          ls -l dist/
-          for file in dist/*; do
-            echo "File: $file"
-            if [[ $file == *.whl ]]; then
-              unzip -p "$file" */METADATA | grep Version
-            elif [[ $file == *.tar.gz ]]; then
-              tar -xzOf "$file" */METADATA | grep Version
-            fi
-          done
-
       - name: Publish to PyPI
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
