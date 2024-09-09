@@ -25,8 +25,9 @@ pip install subsampwinner
 
 ```python
 import numpy as np
-from subsamp import subsamp, SubsampDoubleAssurance
-from GenerateData import generate_heteroskedastic_data
+from subsampwinner.subsamp import subsamp
+from subsampwinner.SubsampDoubleAssurance import SubsampDoubleAssurance
+from subsampwinner.GenerateData import generate_heteroskedastic_dat
 
 # Generate sample data
 n, p = 100, 80
@@ -44,7 +45,9 @@ swa = subsamp(s=20, m=1000, qnum=15)
 swa.fit(X, y)
 
 print("Selected features:", swa.finalists)
+```
 
+```python
 # Run Double Assurance procedure
 sda = SubsampDoubleAssurance(m=1000)
 results = sda.double_assurance(X, y, s0=26, T=0.9, I_max=20, init_range=0.3, r=0.75)
