@@ -6,14 +6,15 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='subsampwinner',
-    version='0.0.2',
+    version='0.0.4',
     author='Wei Dai',
     author_email='wdai@gmu.edu',
     description='A package for feature selection using Subsampling Winner Algorithm',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/wdai0/subsamp',
-    packages=find_packages(),
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',

@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from subsamp import subsamp
 
 class SubsampDoubleAssurance:
     def __init__(self, m, qnum=None, seed=None):
