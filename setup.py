@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='subsampwinner',
-    version='0.0.7',
+    version='0.0.8',
     author='Wei Dai',
     author_email='wdai@gmu.edu',
     description='A package for feature selection using Subsampling Winner Algorithm',
