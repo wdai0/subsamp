@@ -1,0 +1,678 @@
+{
+  "completed_cases": 25,
+  "failures": 0,
+  "scenarios": {
+    "paper-block11-high": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.6499999999999999,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "paper-block11-low": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.7,
+          "average_signal_count": 7.0,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.0,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.75,
+          "average_signal_count": 7.5,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "paper-independent": {
+      "all": {
+        "datasets": 3,
+        "successes": 3,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            0.6666666666666666,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.5666666666666668,
+          "average_signal_count": 5.666666666666668,
+          "semifinalist_recall": 0.5666666666666668,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.666666666666667,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 3,
+        "successes": 3,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.3333333333333333,
+            0.6666666666666666,
+            0.6666666666666666,
+            1.0,
+            0.6666666666666666,
+            0.6666666666666666,
+            1.0
+          ],
+          "average_signal_recovery": 0.5,
+          "average_signal_count": 5.0,
+          "semifinalist_recall": 0.5333333333333333,
+          "mean_false_positives": 0.3333333333333333,
+          "fdr": 0.041666666666666664,
+          "fwer": 0.3333333333333333,
+          "mean_selected_size": 5.333333333333333,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-block11-snr1": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.1,
+          "average_signal_count": 1.0,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.5,
+          "fdr": 0.25,
+          "fwer": 0.5,
+          "mean_selected_size": 1.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "average_signal_recovery": 0.15000000000000002,
+          "average_signal_count": 1.5000000000000002,
+          "semifinalist_recall": 0.4,
+          "mean_false_positives": 0.5,
+          "fdr": 0.25,
+          "fwer": 0.5,
+          "mean_selected_size": 2.0,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-block11-snr20": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.75,
+          "average_signal_count": 7.5,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.7,
+          "average_signal_count": 7.0,
+          "semifinalist_recall": 0.8,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.0,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-block11-snr5": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.3,
+          "average_signal_count": 3.0,
+          "semifinalist_recall": 0.6499999999999999,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 3.0,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            1.0,
+            1.0,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.4,
+          "average_signal_count": 4.0,
+          "semifinalist_recall": 0.6,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 4.0,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-full90-snr1": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.0,
+          "average_signal_count": 0.0,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.0,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.0,
+          "average_signal_count": 0.0,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.0,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-full90-snr20": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.05,
+          "average_signal_count": 0.5,
+          "semifinalist_recall": 0.9,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.15000000000000002,
+          "average_signal_count": 1.5000000000000002,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 1.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-full90-snr5": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.05,
+          "average_signal_count": 0.5,
+          "semifinalist_recall": 0.8500000000000001,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.05,
+          "average_signal_count": 0.5,
+          "semifinalist_recall": 0.6,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-independent-snr1": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.35,
+          "average_signal_count": 3.5,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.5,
+          "fdr": 0.16666666666666666,
+          "fwer": 0.5,
+          "mean_selected_size": 4.0,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.0,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.4,
+          "average_signal_count": 4.0,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.5,
+          "fdr": 0.1,
+          "fwer": 0.5,
+          "mean_selected_size": 4.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-independent-snr20": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.55,
+          "average_signal_count": 5.5,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.6499999999999999,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    },
+    "stress-independent-snr5": {
+      "all": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.0,
+            1.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.55,
+          "average_signal_count": 5.5,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.5,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        }
+      }
+    }
+  }
+}

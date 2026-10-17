@@ -1,0 +1,62 @@
+{
+  "completed_cases": 1,
+  "failures": 0,
+  "scenarios": {
+    "paper-independent": {
+      "all": {
+        "datasets": 1,
+        "successes": 1,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.5,
+          "average_signal_count": 5.0,
+          "semifinalist_recall": 0.6,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.0,
+          "exact_support_frequency": 0.0
+        }
+      },
+      "top_s": {
+        "datasets": 1,
+        "successes": 1,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.5,
+          "average_signal_count": 5.0,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.0,
+          "exact_support_frequency": 0.0
+        }
+      }
+    }
+  }
+}

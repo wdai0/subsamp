@@ -1,0 +1,1485 @@
+{
+  "base": "e0366d3bcf917b875b982214a2ef342f8d463e42",
+  "source_sha256": "545101723a0b7505ec6d3a02425e456200c70ec46c5c02e2f625bf6fcee7f412",
+  "environment": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.0",
+    "statsmodels": "0.14.2"
+  },
+  "policy": "2 datasets per 12 scenarios plus one m=5000; s=q=10; alpha=.05; Bonferroni over q",
+  "signal_variances": {
+    "independent": 76.00999999999999,
+    "block11": 179.188515625,
+    "full90": 417.657110837
+  },
+  "cases": [
+    {
+      "name": "paper-independent",
+      "covariance": "independent",
+      "noise_sd": 1.0,
+      "id": "paper-independent-0",
+      "data_seed": 91000,
+      "schedule_seed": 92000,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "paper-independent-0.npz",
+      "sha256": "068d316735f8476a55d17d4411d201bcbf4453cae0a8a89624f60c02c74c9681",
+      "baseline_seconds": 0.021350166003685445,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.5,
+          "semifinalist_recall": 0.5,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 5,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "signal_recovery": 0.2,
+          "semifinalist_recall": 0.3,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 2,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "paper-independent",
+      "covariance": "independent",
+      "noise_sd": 1.0,
+      "id": "paper-independent-1",
+      "data_seed": 91001,
+      "schedule_seed": 92001,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "paper-independent-1.npz",
+      "sha256": "2711d7c43ffb84c1eac43d7c39bf866bf5caa977e6431cfe806d85187cbecc74",
+      "baseline_seconds": 0.030081584001891315,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "paper-block11-low",
+      "covariance": "block11",
+      "noise_sd": 1.0,
+      "id": "paper-block11-low-0",
+      "data_seed": 91002,
+      "schedule_seed": 92002,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "paper-block11-low-0.npz",
+      "sha256": "dafbde76a93dbd7e1832585743b81c95fa647b9b93d0ab851917663c9a6f5f64",
+      "baseline_seconds": 0.021659041987732053,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.8,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 8,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "paper-block11-low",
+      "covariance": "block11",
+      "noise_sd": 1.0,
+      "id": "paper-block11-low-1",
+      "data_seed": 91003,
+      "schedule_seed": 92003,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "paper-block11-low-1.npz",
+      "sha256": "b11f7335ec581006065015513fabf54e23bfa06bfd7b49b86d593ee83fc34eca",
+      "baseline_seconds": 0.025339874991914257,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "paper-block11-high",
+      "covariance": "block11",
+      "noise_sd": 3.0,
+      "id": "paper-block11-high-0",
+      "data_seed": 91004,
+      "schedule_seed": 92004,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "paper-block11-high-0.npz",
+      "sha256": "b5d4a1242a76bf5d85a9db2d63e955a491d7e9e1aad5ce9fda09d1a2ec0768e5",
+      "baseline_seconds": 0.023329416988417506,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "paper-block11-high",
+      "covariance": "block11",
+      "noise_sd": 3.0,
+      "id": "paper-block11-high-1",
+      "data_seed": 91005,
+      "schedule_seed": 92005,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "paper-block11-high-1.npz",
+      "sha256": "6e6ba011ab0b39612558ede5d2428c60204b26282c52a9b4b660160b34597614",
+      "baseline_seconds": 0.031490916007896885,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-independent-snr1",
+      "covariance": "independent",
+      "noise_sd": 8.718371407550839,
+      "snr": 1,
+      "id": "stress-independent-snr1-0",
+      "data_seed": 91006,
+      "schedule_seed": 92006,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-independent-snr1-0.npz",
+      "sha256": "1d7972f5968c05c06a687ae24dd6a8a77910221e11ca0ba0a8f5df22d93ebf14",
+      "baseline_seconds": 0.017114500020397827,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "signal_recovery": 0.2,
+          "semifinalist_recall": 0.4,
+          "false_positives": 1,
+          "false_discovery_proportion": 0.3333333333333333,
+          "any_false_positive": 1,
+          "selected_size": 3,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.4,
+          "semifinalist_recall": 0.5,
+          "false_positives": 1,
+          "false_discovery_proportion": 0.2,
+          "any_false_positive": 1,
+          "selected_size": 5,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-independent-snr1",
+      "covariance": "independent",
+      "noise_sd": 8.718371407550839,
+      "snr": 1,
+      "id": "stress-independent-snr1-1",
+      "data_seed": 91007,
+      "schedule_seed": 92007,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-independent-snr1-1.npz",
+      "sha256": "2b62ae69e33955c5e0618180de74e6c18e7fdeec87272834eba7b83e929b5936",
+      "baseline_seconds": 0.025631625001551583,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "signal_recovery": 0.5,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 5,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "signal_recovery": 0.4,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 4,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-independent-snr5",
+      "covariance": "independent",
+      "noise_sd": 3.8989742240748395,
+      "snr": 5,
+      "id": "stress-independent-snr5-0",
+      "data_seed": 91008,
+      "schedule_seed": 92008,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-independent-snr5-0.npz",
+      "sha256": "dad0f6d9d7c49ce586ed7ac5b462b1f5b3fa2300d36fca559e2c04dadc6166f6",
+      "baseline_seconds": 0.020015957998111844,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "signal_recovery": 0.4,
+          "semifinalist_recall": 0.4,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 4,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-independent-snr5",
+      "covariance": "independent",
+      "noise_sd": 3.8989742240748395,
+      "snr": 5,
+      "id": "stress-independent-snr5-1",
+      "data_seed": 91009,
+      "schedule_seed": 92009,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-independent-snr5-1.npz",
+      "sha256": "74f34fe259ba485987fd84e62eee974ebdcd5ce765461c829806f4b4dd80f37a",
+      "baseline_seconds": 0.029565375007223338,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-independent-snr20",
+      "covariance": "independent",
+      "noise_sd": 1.9494871120374198,
+      "snr": 20,
+      "id": "stress-independent-snr20-0",
+      "data_seed": 91010,
+      "schedule_seed": 92010,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-independent-snr20-0.npz",
+      "sha256": "524d649584cb5f44514db45aada53c9269bc97da626c28ea7554c39c0860cb67",
+      "baseline_seconds": 0.01872612498118542,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-independent-snr20",
+      "covariance": "independent",
+      "noise_sd": 1.9494871120374198,
+      "snr": 20,
+      "id": "stress-independent-snr20-1",
+      "data_seed": 91011,
+      "schedule_seed": 92011,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-independent-snr20-1.npz",
+      "sha256": "67c4a91179231eca8f5d9eb09423000ddc592b57e34eccb095f5a2dc3745b7e9",
+      "baseline_seconds": 0.025813332991674542,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.5,
+          "semifinalist_recall": 0.5,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 5,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-block11-snr1",
+      "covariance": "block11",
+      "noise_sd": 13.386131465998682,
+      "snr": 1,
+      "id": "stress-block11-snr1-0",
+      "data_seed": 91012,
+      "schedule_seed": 92012,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-block11-snr1-0.npz",
+      "sha256": "3859ab4f135436240e4c4f27e83ba02a337854fb20d940139c806d4144a93841",
+      "baseline_seconds": 0.02901912500965409,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.5,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 1,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "signal_recovery": 0.2,
+          "semifinalist_recall": 0.3,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 2,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-block11-snr1",
+      "covariance": "block11",
+      "noise_sd": 13.386131465998682,
+      "snr": 1,
+      "id": "stress-block11-snr1-1",
+      "data_seed": 91013,
+      "schedule_seed": 92013,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-block11-snr1-1.npz",
+      "sha256": "43eb8ad1d723a88eb973f278e11c03e1cfd84f23f68b0faf51c642af693edc03",
+      "baseline_seconds": 0.016987707989756018,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.5,
+          "false_positives": 1,
+          "false_discovery_proportion": 0.5,
+          "any_false_positive": 1,
+          "selected_size": 2,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.5,
+          "false_positives": 1,
+          "false_discovery_proportion": 0.5,
+          "any_false_positive": 1,
+          "selected_size": 2,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-block11-snr5",
+      "covariance": "block11",
+      "noise_sd": 5.986459982744393,
+      "snr": 5,
+      "id": "stress-block11-snr5-0",
+      "data_seed": 91014,
+      "schedule_seed": 92014,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-block11-snr5-0.npz",
+      "sha256": "4d1f605a3159b4c84b8eebe2ad7d65a55381ea14f5de5abcdca5d0206f1ec85b",
+      "baseline_seconds": 0.02436795801622793,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "signal_recovery": 0.3,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 3,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "signal_recovery": 0.3,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 3,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-block11-snr5",
+      "covariance": "block11",
+      "noise_sd": 5.986459982744393,
+      "snr": 5,
+      "id": "stress-block11-snr5-1",
+      "data_seed": 91015,
+      "schedule_seed": 92015,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-block11-snr5-1.npz",
+      "sha256": "7d21823d7d0edce501208c65d4fb083b5ab49b3d12ff8b6bed0a7a7de3acb4ac",
+      "baseline_seconds": 0.025574625004082918,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "signal_recovery": 0.3,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 3,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.5,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 5,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-block11-snr20",
+      "covariance": "block11",
+      "noise_sd": 2.9932299913721967,
+      "snr": 20,
+      "id": "stress-block11-snr20-0",
+      "data_seed": 91016,
+      "schedule_seed": 92016,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-block11-snr20-0.npz",
+      "sha256": "3c6c3bcb519773b4fff08536d20544f6998edbd6698a7e2164939be1038ffe9b",
+      "baseline_seconds": 0.0173260829760693,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-block11-snr20",
+      "covariance": "block11",
+      "noise_sd": 2.9932299913721967,
+      "snr": 20,
+      "id": "stress-block11-snr20-1",
+      "data_seed": 91017,
+      "schedule_seed": 92017,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-block11-snr20-1.npz",
+      "sha256": "9715e39c7b41792aeabfcbdc6de989ee710de44ee5d57df9525bfc0871db17fc",
+      "baseline_seconds": 0.019949667010223493,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.8,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 8,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 7,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-full90-snr1",
+      "covariance": "full90",
+      "noise_sd": 20.43666095126599,
+      "snr": 1,
+      "id": "stress-full90-snr1-0",
+      "data_seed": 91018,
+      "schedule_seed": 92018,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-full90-snr1-0.npz",
+      "sha256": "79a35bf686de5e0df6a7ed7560c4f37dc5da6b3b369907f72bacb4c62c57ae71",
+      "baseline_seconds": 0.02443150000181049,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-full90-snr1",
+      "covariance": "full90",
+      "noise_sd": 20.43666095126599,
+      "snr": 1,
+      "id": "stress-full90-snr1-1",
+      "data_seed": 91019,
+      "schedule_seed": 92019,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-full90-snr1-1.npz",
+      "sha256": "f63b4627000945fd4864e4cbd6801c1043a032303f169cc5cb38a5c654d5aef2",
+      "baseline_seconds": 0.01895220801816322,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.4,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-full90-snr5",
+      "covariance": "full90",
+      "noise_sd": 9.139552624029253,
+      "snr": 5,
+      "id": "stress-full90-snr5-0",
+      "data_seed": 91020,
+      "schedule_seed": 92020,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-full90-snr5-0.npz",
+      "sha256": "d5ef532cead8384d5162b7f584c5615c0970f6b07ed222de156b1bdd199c333c",
+      "baseline_seconds": 0.02058937499532476,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.9,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-full90-snr5",
+      "covariance": "full90",
+      "noise_sd": 9.139552624029253,
+      "snr": 5,
+      "id": "stress-full90-snr5-1",
+      "data_seed": 91021,
+      "schedule_seed": 92021,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-full90-snr5-1.npz",
+      "sha256": "5ed8676ba2a13fc73fbd4d8d0b0133fc096324a95f30cb9d090c384d489f9fdc",
+      "baseline_seconds": 0.016654083010507748,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.8,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 1,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.5,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 1,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-full90-snr20",
+      "covariance": "full90",
+      "noise_sd": 4.569776312014627,
+      "snr": 20,
+      "id": "stress-full90-snr20-0",
+      "data_seed": 91022,
+      "schedule_seed": 92022,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-full90-snr20-0.npz",
+      "sha256": "3612d60c9dc52fa06bcd86c48b683d767b5e6ecd00c101ffa3aad919caf5963a",
+      "baseline_seconds": 0.02154104199144058,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.0,
+          "semifinalist_recall": 0.9,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 0,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 1,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "stress-full90-snr20",
+      "covariance": "full90",
+      "noise_sd": 4.569776312014627,
+      "snr": 20,
+      "id": "stress-full90-snr20-1",
+      "data_seed": 91023,
+      "schedule_seed": 92023,
+      "s": 10,
+      "q": 10,
+      "m": 120,
+      "file": "stress-full90-snr20-1.npz",
+      "sha256": "1ba2ac6838225e4a71b2dcb9306f565a14919366f62eacb62a5bd9a5a9bcaf56",
+      "baseline_seconds": 0.032016417011618614,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "signal_recovery": 0.1,
+          "semifinalist_recall": 0.9,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 1,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "signal_recovery": 0.2,
+          "semifinalist_recall": 0.7,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 2,
+          "exact_support": 0
+        }
+      }
+    },
+    {
+      "name": "paper-independent",
+      "covariance": "independent",
+      "noise_sd": 1.0,
+      "id": "paper-independent-m5000",
+      "data_seed": 91999,
+      "schedule_seed": 92999,
+      "s": 10,
+      "q": 10,
+      "m": 5000,
+      "file": "paper-independent-m5000.npz",
+      "sha256": "cce694705270ad46da3cac533af4fa43ed8286aabdf7a5c1d700e2350b64afae",
+      "baseline_seconds": 0.5602084579877555,
+      "metrics": {
+        "all": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.6,
+          "semifinalist_recall": 0.6,
+          "false_positives": 0,
+          "false_discovery_proportion": 0.0,
+          "any_false_positive": 0,
+          "selected_size": 6,
+          "exact_support": 0
+        },
+        "top_s": {
+          "signal_selected": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "signal_recovery": 0.7,
+          "semifinalist_recall": 0.7,
+          "false_positives": 1,
+          "false_discovery_proportion": 0.125,
+          "any_false_positive": 1,
+          "selected_size": 8,
+          "exact_support": 0
+        }
+      }
+    }
+  ]
+}

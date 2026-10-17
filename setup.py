@@ -20,16 +20,14 @@ setup(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.9',
     install_requires=[
         'numpy>=1.26.4',
         'scipy>=1.13.0',
         'statsmodels>=0.14.2',
-        'mpi4py>=3.1.6',
     ],
+    extras_require={'mpi': ['mpi4py>=3.1.6']},
 )

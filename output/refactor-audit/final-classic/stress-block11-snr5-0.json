@@ -1,0 +1,148 @@
+{
+  "case": {
+    "name": "stress-block11-snr5",
+    "covariance": "block11",
+    "noise_sd": 5.986459982744393,
+    "snr": 5,
+    "id": "stress-block11-snr5-0",
+    "data_seed": 91014,
+    "schedule_seed": 92014,
+    "s": 10,
+    "q": 10,
+    "m": 120,
+    "file": "stress-block11-snr5-0.npz",
+    "sha256": "4d1f605a3159b4c84b8eebe2ad7d65a55381ea14f5de5abcdca5d0206f1ec85b",
+    "baseline_seconds": 0.02436795801622793,
+    "metrics": {
+      "all": {
+        "signal_selected": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "signal_recovery": 0.3,
+        "semifinalist_recall": 0.6,
+        "false_positives": 0,
+        "false_discovery_proportion": 0.0,
+        "any_false_positive": 0,
+        "selected_size": 3,
+        "exact_support": 0
+      },
+      "top_s": {
+        "signal_selected": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "signal_recovery": 0.3,
+        "semifinalist_recall": 0.6,
+        "false_positives": 0,
+        "false_discovery_proportion": 0.0,
+        "any_false_positive": 0,
+        "selected_size": 3,
+        "exact_support": 0
+      }
+    }
+  },
+  "error": null,
+  "baseline": {
+    "seconds": 0.011185709008714184,
+    "python_traced_peak_bytes": 510176
+  },
+  "candidate": {
+    "seconds": 0.019366584019735456,
+    "python_traced_peak_bytes": 103859
+  },
+  "modes": {
+    "all": {
+      "signal_selected": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "signal_recovery": 0.3,
+      "semifinalist_recall": 0.6,
+      "false_positives": 0,
+      "false_discovery_proportion": 0.0,
+      "any_false_positive": 0,
+      "selected_size": 3,
+      "exact_support": 0,
+      "semifinalists": [
+        6,
+        5,
+        7,
+        4,
+        9,
+        3,
+        24,
+        97,
+        98,
+        70
+      ],
+      "finalists": [
+        7,
+        9,
+        3
+      ]
+    },
+    "top_s": {
+      "signal_selected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "signal_recovery": 0.3,
+      "semifinalist_recall": 0.6,
+      "false_positives": 0,
+      "false_discovery_proportion": 0.0,
+      "any_false_positive": 0,
+      "selected_size": 3,
+      "exact_support": 0,
+      "semifinalists": [
+        6,
+        9,
+        4,
+        3,
+        7,
+        2,
+        55,
+        94,
+        98,
+        31
+      ],
+      "finalists": [
+        6,
+        9,
+        7
+      ]
+    }
+  }
+}

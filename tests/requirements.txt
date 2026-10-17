@@ -1,0 +1,5 @@
+# Reference environment only; not a change to the package's runtime metadata.
+numpy==1.26.4
+scipy==1.13.0
+statsmodels==0.14.2
+pytest==8.4.2

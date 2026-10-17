@@ -1,0 +1,3 @@
+-r requirements.txt
+mpi4py==4.1.1
+# Also supply an MPI runtime; the local audit used mpich==5.0.2.

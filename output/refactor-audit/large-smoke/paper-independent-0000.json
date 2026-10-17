@@ -1,0 +1,104 @@
+{
+  "case": {
+    "name": "paper-independent",
+    "covariance": "independent",
+    "noise_sd": 1.0,
+    "id": "paper-independent-0000",
+    "data_seed": 1000000,
+    "schedule_seed": 2000000,
+    "s": 10,
+    "q": 10,
+    "m": 5000
+  },
+  "error": null,
+  "baseline": {
+    "seconds": 0.5546130830189213,
+    "python_traced_peak_bytes": 18588052
+  },
+  "candidate": {
+    "seconds": 0.8810402920062188,
+    "python_traced_peak_bytes": 2216012
+  },
+  "modes": {
+    "all": {
+      "signal_selected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "signal_recovery": 0.5,
+      "semifinalist_recall": 0.6,
+      "false_positives": 0,
+      "false_discovery_proportion": 0.0,
+      "any_false_positive": 0,
+      "selected_size": 5,
+      "exact_support": 0,
+      "semifinalists": [
+        9,
+        6,
+        7,
+        8,
+        36,
+        39,
+        5,
+        91,
+        1,
+        48
+      ],
+      "finalists": [
+        9,
+        6,
+        7,
+        8,
+        5
+      ]
+    },
+    "top_s": {
+      "signal_selected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "signal_recovery": 0.5,
+      "semifinalist_recall": 0.5,
+      "false_positives": 0,
+      "false_discovery_proportion": 0.0,
+      "any_false_positive": 0,
+      "selected_size": 5,
+      "exact_support": 0,
+      "semifinalists": [
+        9,
+        7,
+        8,
+        6,
+        33,
+        69,
+        60,
+        5,
+        36,
+        67
+      ],
+      "finalists": [
+        9,
+        7,
+        8,
+        6,
+        5
+      ]
+    }
+  }
+}
