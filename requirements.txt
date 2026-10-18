@@ -17,7 +17,7 @@ jupyter_core==5.7.2
 kiwisolver==1.4.5
 matplotlib==3.8.4
 matplotlib-inline==0.1.7
-mpi4py==3.1.6
+# Optional MPI support: install subsampwinner[mpi] separately.
 nest-asyncio==1.6.0
 numpy==1.26.4
 packaging==24.0

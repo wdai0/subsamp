@@ -1,0 +1,15 @@
+{
+  "description": "Paper-derived sensitivity profile specified by the supplied external review; published PDF not independently rechecked in this revision. Existing frozen fixtures remain s=q=10.",
+  "n": 80,
+  "p": 100,
+  "s": 30,
+  "q": 30,
+  "m": 5000,
+  "alpha": 0.05,
+  "method": "bonferroni",
+  "family": "p candidates",
+  "scenarios": 12,
+  "datasets_per_scenario": 1000,
+  "data_seed_base": 3000000,
+  "schedule_seed_base": 4000000
+}

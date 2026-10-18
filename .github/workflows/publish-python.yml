@@ -1,41 +1,52 @@
 name: Publish Python Package
 on:
   release:
-    types: [created]
+    types: [published]
+permissions:
+  contents: read
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Check out the release tag
+        uses: actions/checkout@v4
         with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install build and reference-test dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install setuptools wheel twine
-
-      - name: Clean build directories
-        run: |
-          rm -rf build dist *.egg-info
-
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
-
-      - name: Build the package
+          python -m pip install --upgrade pip setuptools wheel build twine
+          python -m pip install -r tests/requirements.txt
+      - name: Build source distribution and wheel
+        run: python -m build --no-isolation
+      - run: python tests/check_distributions.py dist
+      - run: python -m twine check --strict dist/*
+      - run: python -m pip install dist/*.whl
+      - name: Verify release tag matches the installed package version
         env:
-          GITHUB_REF_NAME: ${{ steps.get_version.outputs.VERSION }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
-          python setup.py sdist bdist_wheel
-
-      - name: Publish to PyPI
+          python - <<'PY'
+          import os
+          from importlib.metadata import version
+          expected = 'v' + version('subsampwinner')
+          if os.environ['RELEASE_TAG'] != expected:
+              raise SystemExit(f'Release tag must be {expected}')
+          PY
+      - run: python -m pip check
+      - run: python -I tests/installed_smoke.py
+      - name: Test the installed release artifact
+        env:
+          SUBSAMP_TEST_INSTALLED: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/subsamp-source"
+          tar -xzf dist/*.tar.gz -C "$RUNNER_TEMP/subsamp-source"
+          cd "$RUNNER_TEMP/subsamp-source"/subsampwinner-*
+          python -m pytest -q
+      - name: Publish the verified artifacts
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: |
-          twine upload dist/*
+        run: python -m twine upload dist/*

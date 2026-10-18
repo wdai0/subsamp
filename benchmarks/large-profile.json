@@ -1,0 +1,17 @@
+{
+  "description": "Prepared paired method-evaluation profile; requires explicit scenario and replicate chunk. Not a default test or production submission.",
+  "datasets_per_scenario": 1000,
+  "scenarios": 12,
+  "n": 80,
+  "p": 100,
+  "s": 10,
+  "q": 10,
+  "m": 5000,
+  "alpha": 0.05,
+  "method": "bonferroni",
+  "family": "q semifinalists",
+  "data_seed_base": 1000000,
+  "schedule_seed_base": 2000000,
+  "parallelism": "One writer per output directory. Independent chunks use separate directories.",
+  "method_note": "Both retention modes, legacy baseline and candidate, same datasets and saved ordered schedules. Separate uninstrumented timing and instrumented memory replays."
+}

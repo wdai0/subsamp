@@ -1,0 +1,148 @@
+{
+  "provenance": {
+    "base_commit": "e0366d3bcf917b875b982214a2ef342f8d463e42",
+    "environment": {
+      "python": "3.10.7",
+      "platform": "macOS-27.0.1-arm64-arm-64bit",
+      "packages": {
+        "numpy": "1.26.4",
+        "scipy": "1.13.0",
+        "statsmodels": "0.14.2",
+        "mpi4py": "4.1.1",
+        "pytest": "8.4.2"
+      }
+    },
+    "serial_mpi_initialization": false,
+    "source_sha256": {
+      "src/subsampwinner/GenerateData.py": "4302ee26d9919d9a188ec35656a45014018d25f4897630a10138eea9a78c97d8",
+      "src/subsampwinner/SubsampDoubleAssurance.py": "b13bd9f7521f2ba9ae0011210f1f2e428780310786666fb56f24464f69ced705",
+      "src/subsampwinner/__init__.py": "58f9afe3c27c1dc71a6f3b71dd4fdbc92d752102e5ab32c14429857729393419",
+      "src/subsampwinner/subsamp.py": "545101723a0b7505ec6d3a02425e456200c70ec46c5c02e2f625bf6fcee7f412"
+    }
+  },
+  "observations": {
+    "tiny_valid_example": {
+      "value": {
+        "returned": null,
+        "semifinalists": [
+          0,
+          1,
+          10,
+          7
+        ],
+        "finalists": [
+          0,
+          1
+        ],
+        "final_model_feature_count": 4,
+        "df_resid": 55.0
+      },
+      "warnings": []
+    },
+    "constant_predictor": {
+      "exception": "ValueError",
+      "message": "shape mismatch: value array of shape (3,) could not be broadcast to indexing result of shape (4,)",
+      "warnings": []
+    },
+    "zero_qnum": {
+      "value": {
+        "returned": null,
+        "semifinalists": [
+          0,
+          1,
+          7,
+          2,
+          11,
+          3,
+          4,
+          6,
+          10,
+          9,
+          5,
+          8
+        ],
+        "finalists": [
+          0,
+          1
+        ],
+        "final_model_feature_count": 12,
+        "df_resid": 47.0
+      },
+      "warnings": []
+    },
+    "empty_assurance_union": {
+      "exception": "ZeroDivisionError",
+      "message": "division by zero",
+      "warnings": []
+    },
+    "oversized_assurance_candidate": {
+      "exception": "ValueError",
+      "message": "Cannot take a larger sample than population when 'replace=False'",
+      "warnings": []
+    },
+    "misspelled_method": {
+      "value": [
+        [
+          0
+        ],
+        [
+          0.03,
+          0.2
+        ]
+      ],
+      "warnings": []
+    },
+    "unstructured_covariance": {
+      "value": {
+        "minimum_eigenvalue": -10.375342260280775
+      },
+      "warnings": [
+        "covariance is not symmetric positive-semidefinite."
+      ]
+    },
+    "global_rng": {
+      "value": {
+        "global_state_changed": true
+      },
+      "warnings": []
+    },
+    "zero_iterations": {
+      "exception": "UnboundLocalError",
+      "message": "local variable 's1' referenced before assignment",
+      "warnings": []
+    },
+    "singular_predictors": {
+      "value": {
+        "returned": null,
+        "semifinalists": [
+          1,
+          0,
+          2
+        ],
+        "finalists": [
+          1,
+          0,
+          2
+        ],
+        "final_model_feature_count": 3,
+        "df_resid": 57.0
+      },
+      "warnings": []
+    },
+    "zero_residual_df": {
+      "value": {
+        "returned": null,
+        "semifinalists": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "finalists": [],
+        "final_model_feature_count": 4,
+        "df_resid": 0.0
+      },
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,51 @@
+name: Reference and runtime tests
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  serial:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python: '3.9'
+            stack: minimum-python
+          - python: '3.10'
+            stack: reference
+          - python: '3.12'
+            stack: current
+          - python: '3.12'
+            stack: minimum-backend-pandas3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --upgrade pip setuptools wheel build twine
+      - if: matrix.stack == 'reference'
+        run: python -m pip install -r tests/requirements.txt
+      - if: matrix.stack == 'minimum-python'
+        run: python -m pip install numpy==1.26.4 scipy==1.13.0 statsmodels==0.14.2 pandas==2.3.3 patsy==1.0.3 pytest==8.4.2
+      - if: matrix.stack == 'current'
+        run: python -m pip install --upgrade numpy scipy statsmodels pytest
+      - if: matrix.stack == 'minimum-backend-pandas3'
+        run: python -m pip install numpy==1.26.4 scipy==1.13.0 statsmodels==0.14.2 'pandas>=3,<4' pytest
+      - name: Build the source distribution and its wheel
+        run: python -m build --no-isolation
+      - run: python tests/check_distributions.py dist
+      - run: python -m twine check --strict dist/*
+      - run: python -m pip install dist/*.whl
+      - run: python -m pip check
+      - run: python -I tests/installed_smoke.py
+      - name: Test the installed wheel with the source distribution's complete suite
+        env:
+          SUBSAMP_TEST_INSTALLED: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/subsamp-source"
+          tar -xzf dist/*.tar.gz -C "$RUNNER_TEMP/subsamp-source"
+          cd "$RUNNER_TEMP/subsamp-source"/subsampwinner-*
+          python -m pytest -q

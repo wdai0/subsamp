@@ -1,77 +1,149 @@
-# subsamp Feature Selection with Subsampling Winner Algorithm
+# subsampwinner
 
-Subsampling Winner Algorithm (SWA)
+NumPy-based feature selection with the Subsampling Winner Algorithm (SWA), conventional OLS/WLS fitting, and an adaptive assurance procedure.
+The implementation separates subset sampling, regression, retention, scoring, and significance filtering.
 
-SubsampWinner is a Python package that implements the Subsampling Winner Algorithm (SWA) for feature selection in high-dimensional datasets.
-It includes a robust double assurance procedure to enhance stability and reliability in feature selection.
+## Install and run
 
-## Features
-
-- Subsampling Winner Algorithm (SWA) for efficient feature selection;
-- Double Assurance procedure for improved stability;
-- Support for both homoskedastic and heteroskedastic data;
-- Parallel processing capabilities for improved performance;
-- Flexible parameter tuning and multiple testing correction methods.
-
-## Installation
-
-You can install SubsampWinner using pip:
+Python 3.9 or newer is required.
+Install the released package:
 
 ```bash
-pip install subsampwinner
+python -m pip install subsampwinner
 ```
 
-## Quick Start
-
-We start the experiment by generating a dataset with **80 samples and 100 features**.
-We test the performance of the subsampling winner algorithm against different levels of signal strength.
-The output includes the indices of the selected features and the summary of the final model.
-
-Additionally, we run the double assurance procedure to further enhance the stability of the feature selection.
+For development, clone the repository and run `python -m pip install -e .`.
+See the [0.1.0 release notes](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/RELEASE_NOTES.md) for compatibility changes and validation limits.
 
 ```python
-### setup
 import numpy as np
-from subsampwinner.subsamp import subsamp
-from subsampwinner.SubsampDoubleAssurance import SubsampDoubleAssurance
-from subsampwinner.GenerateData import generate_heteroskedastic_data
+from subsampwinner import subsamp
 
-# Generate sample data
-n, p = 80, 100
-beta0 = np.array([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])
-beta0_index = np.arange(len(beta0))
-beta = np.zeros(p)
-beta[beta0_index] = beta0
-gamma = np.zeros(p)
+rng = np.random.RandomState(7)
+X = rng.normal(size=(80, 100))
+beta = np.r_[.1, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, np.zeros(90)]
+y = X @ beta + rng.normal(size=80)
 
-X, y, _, _ = generate_heteroskedastic_data(n, p, hetero_func=lambda x: 1.2,
-    beta=beta, gamma=gamma, type='diagonal')
-
-# Initialize and run SWA
-swa = subsamp(s=25, m=1000, qnum=15)
+swa = subsamp(s=10, m=120, qnum=10, seed=7)
 swa.fit(X, y)
+print(swa.finalists)             # zero-based original feature IDs
+print(swa.final_model.summary()) # model on ALL semifinalists
 ```
 
-We obtain the following selected feature indices:
+`fit` returns `None`, as before.
+The stored `final_model` is a statsmodels regression on the semifinalists; `finalists` filters those slope tests and does not trigger another regression.
+Bonferroni and Benjamini–Hochberg adjust over the `qnum` semifinalists.
+Use `method="none"` for unadjusted filtering; misspelled methods raise an error.
+The post-selection p-values do not acquire a general selection-adjusted inferential guarantee from this refactor.
+
+The default score averages `abs(t) / sqrt(raw RSS)` over nonzero t-statistics for each feature.
+All submodels contribute by default.
+`fit(..., use_top_s=True)` retains the best `min(s, m)` submodels by raw RSS before scoring, including when fitting WLS.
+Positive `weights` mean inverse observation variances with conventional covariance and Student-t inference.
+
+## Custom scoring
+
+A scorer receives a public `SubsampleStatistics` record after retention.
+It contains aligned `(retained_models, s)` arrays `feature_indices` and signed `t_values`, along with `rss`, `repetition_ids`, `n_features`, `df_resid`, and `weighted_rss`.
+Arrays are owned read-only copies; IDs refer to original features and repetitions.
+Return a finite vector of shape `(p,)` with a real integer or floating dtype.
+Boolean, string, object, date, and complex outputs are rejected before conversion.
+Negative scores are allowed, larger scores rank first, and the coordinator does not rescale or overwrite the returned values.
 
 ```python
-# selected variables
-selected_features = [selected_var + 1 for selected_var in swa.finalists]
+from subsampwinner import SubsampleStatistics, default_scorer
 
-print("Selected features:", selected_features)
+def powered_score(stats: SubsampleStatistics) -> np.ndarray:
+    # Illustrative method extension, not a validated recommended score.
+    contribution = np.abs(stats.t_values)**1.5 / stats.rss[:, None]**.5
+    ids = stats.feature_indices.ravel()
+    totals = np.bincount(ids, weights=contribution.ravel(), minlength=stats.n_features)
+    counts = np.bincount(ids, weights=(stats.t_values != 0).ravel(), minlength=stats.n_features)
+    return np.divide(totals, counts, out=np.zeros_like(totals), where=counts != 0)
+
+custom = subsamp(10, 120, qnum=10, seed=7, scorer=powered_score)
+custom.fit(X, y, use_top_s=True)
+# scorer=None and scorer=default_scorer give the same default method.
 ```
 
-and the following summary of the final model:
+The package owns `fit_least_squares` and `LeastSquaresResult` as its regression boundary.
+Statsmodels is the initial fitting engine.
+Robust covariance, alternative weight interpretations, and a replacement solver require explicit extensions to that contract.
+The public boundary owns inputs retained by the returned model; reusing caller arrays cannot change later diagnostics.
+Repeated subset fits use the same numerical acceptance checks but do not calculate unused p-values.
+See the [review revisions and validation](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REVISION_AUDIT.md) and [original implementation audit](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFACTOR_AUDIT.md).
+
+## Adaptive assurance and compatibility
 
 ```python
-# A summary of selected features
-swa.final_model.summary()
+from subsampwinner import SubsampDoubleAssurance
+
+assurance = SubsampDoubleAssurance(m=120, qnum=10, seed=7)
+result = assurance.double_assurance(X, y, s0=10, I_max=3, return_objects=True)
+print(result["stabilized_union_set"])
+print(assurance.history_)
 ```
 
-We verify the stability of the feature selection by running the double assurance procedure.
+This preserves the existing adaptive largest-set update and cumulative union across iterations.
+It is not the paper's union-model refit procedure, and the returned union is not necessarily a stable consensus.
+An empty triplet stops with score zero and preserves earlier selections.
+Invalid candidate ranges raise rather than being clipped.
 
-```python
-# Run Double Assurance procedure
-sda = SubsampDoubleAssurance(m=1000)
-results = sda.double_assurance(X, y, s0=26, T=0.9, I_max=20, init_range=0.3, r=0.75)
+Original class imports and the misspelled `subsample_anlysis` method remain available.
+That compatibility method returns dense legacy dictionaries; `fit` uses compact storage of order `m*s + p` instead of `m*p`.
+Both fitting and the default data generator own local RandomState streams and leave NumPy's global stream untouched.
+Failed fits preserve previously successful fitted state.
+
+Nonfinite inputs, supplied constant columns, singular fitted designs, nonpositive residual degrees of freedom, invalid weights, and numerically perfect fits raise informative errors.
+Rank is checked on each actual fitted design, so `p > n` remains supported.
+The relative rank cutoff is `max(max(n,k)*eps, 1e-15)`, including the intercept in `k`, to respect the backend pseudoinverse cutoff.
+Overflow-safe norms and normalized bound arithmetic protect the residual check; a very large response offset can still be rejected by its conservative roundoff policy.
+The `parallel`, `use_top_s`, and assurance `return_objects` flags require Boolean values, including NumPy booleans.
+The old unstructured generator recipe can produce an invalid covariance; these draws now raise instead of generating data from an indefinite matrix.
+
+## Optional MPI
+
+```bash
+python -m pip install 'subsampwinner[mpi]'
+mpiexec -n 3 python your_script.py
 ```
+
+Every rank calls `fit(..., parallel=True)` with identical inputs/options.
+Root generates one schedule and invokes the scorer once; all ranks receive the complete fitted result.
+The normal serial installation does not import or require mpi4py.
+An MPI runtime is additionally required for parallel execution.
+
+## Verification
+
+```bash
+python -m pip install -r tests/requirements.txt
+python -m pytest -q
+```
+
+`tests/requirements.txt` freezes the complete serial reference stack for CPython 3.10, including pandas and patsy.
+The PR/push workflow also tests the reference numerical dependencies on Python 3.9 with compatible test tooling, fresh current dependencies on Python 3.12, and the minimum statsmodels backend with pandas 3 on Python 3.12.
+It builds a source distribution and a wheel from that source distribution, checks their contents, and runs the full serial suite against the installed wheel using the source archive's tests.
+Branch protection must separately require the workflow checks in repository settings.
+
+The normal command includes the 25 saved classic datasets and schedules, including a 5,000-submodel case.
+Expected outputs were captured from the unmodified pinned legacy revision before refactoring.
+Optional R and actual multi-process checks are explicit:
+
+```bash
+SUBSAMP_CRAN_SOURCE=/path/to/pinned/subsamp.R python -m pytest tests/test_cran_reference.py -q
+SUBSAMP_TEST_MPI=1 python -m pytest tests/test_mpi.py -q
+```
+
+See [benchmark instructions](https://github.com/wdai0/subsamp/blob/v0.1.0/benchmarks/README.md) for the paired audit and the prepared larger evaluation.
+The [reference behavior specification](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFERENCE_BEHAVIOR.md) and [stage 1 handoff](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFERENCE_HANDOFF.md) preserve the pre-refactor evidence.
+The [refactor audit](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFACTOR_AUDIT.md) records implemented repairs, measured trade-offs, verification, and remaining limits.
+
+The [revision audit](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REVISION_AUDIT.md) records the external-review fixes and repeated production timing against both legacy and the first refactor.
+
+## Repository and release contents
+
+Code, tests, the essential frozen reference fixtures, benchmark tools/configurations, and concise documentation stay together in this repository.
+Generated reports and run outputs belong in the ignored `output/` directory and are archived separately when needed.
+The full pre-cleanup evidence is retained in the [versioned audit archive](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/AUDIT_ARCHIVE.md).
+The wheel contains only the runtime package and metadata; the source distribution also includes the complete tests, fixtures, and benchmark helpers needed for verification.
+See [packaging and release checks](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/PACKAGING.md) for local build commands and the checks required before publication.
