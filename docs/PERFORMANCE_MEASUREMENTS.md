@@ -1,5 +1,8 @@
 # Performance measurements and slowdown diagnosis
 
+Historical report for `c881315`; its measurements and original implementation descriptions are preserved.
+See [the October 18 revision audit](REVISION_AUDIT.md) for subsequent fixes and current measurements.
+
 This report accompanies the current refactor and [implementation audit](REFACTOR_AUDIT.md).
 The legacy reference is Git revision `e0366d3bcf917b875b982214a2ef342f8d463e42`.
 No runtime optimizations from the diagnostic experiments below have been applied to the implementation in this snapshot.

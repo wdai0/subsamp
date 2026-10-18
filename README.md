@@ -43,7 +43,8 @@ Positive `weights` mean inverse observation variances with conventional covarian
 A scorer receives a public `SubsampleStatistics` record after retention.
 It contains aligned `(retained_models, s)` arrays `feature_indices` and signed `t_values`, along with `rss`, `repetition_ids`, `n_features`, `df_resid`, and `weighted_rss`.
 Arrays are owned read-only copies; IDs refer to original features and repetitions.
-Return one finite score per original feature.
+Return a finite vector of shape `(p,)` with a real integer or floating dtype.
+Boolean, string, object, date, and complex outputs are rejected before conversion.
 Negative scores are allowed, larger scores rank first, and the coordinator does not rescale or overwrite the returned values.
 
 ```python
@@ -65,7 +66,9 @@ custom.fit(X, y, use_top_s=True)
 The package owns `fit_least_squares` and `LeastSquaresResult` as its regression boundary.
 Statsmodels is the initial fitting engine.
 Robust covariance, alternative weight interpretations, and a replacement solver require explicit extensions to that contract.
-See [implementation contracts and audit](docs/REFACTOR_AUDIT.md).
+The public boundary owns inputs retained by the returned model; reusing caller arrays cannot change later diagnostics.
+Repeated subset fits use the same numerical acceptance checks but do not calculate unused p-values.
+See the [review revisions and validation](docs/REVISION_AUDIT.md) and [original implementation audit](docs/REFACTOR_AUDIT.md).
 
 ## Adaptive assurance and compatibility
 
@@ -90,6 +93,9 @@ Failed fits preserve previously successful fitted state.
 
 Nonfinite inputs, supplied constant columns, singular fitted designs, nonpositive residual degrees of freedom, invalid weights, and numerically perfect fits raise informative errors.
 Rank is checked on each actual fitted design, so `p > n` remains supported.
+The relative rank cutoff is `max(max(n,k)*eps, 1e-15)`, including the intercept in `k`, to respect the backend pseudoinverse cutoff.
+Overflow-safe norms and normalized bound arithmetic protect the residual check; a very large response offset can still be rejected by its conservative roundoff policy.
+The `parallel`, `use_top_s`, and assurance `return_objects` flags require Boolean values, including NumPy booleans.
 The old unstructured generator recipe can produce an invalid covariance; these draws now raise instead of generating data from an indefinite matrix.
 
 ## Optional MPI
@@ -111,6 +117,11 @@ python -m pip install -r tests/requirements.txt
 python -m pytest -q
 ```
 
+`tests/requirements.txt` freezes the complete serial reference stack for CPython 3.10, including pandas and patsy.
+The PR/push workflow also tests fresh current dependencies and the minimum statsmodels backend with pandas 3 on Python 3.12.
+It builds a wheel, checks an isolated installed-package fit, and runs the full serial suite.
+Branch protection must separately require the workflow checks in repository settings.
+
 The normal command includes the 25 saved classic datasets and schedules, including a 5,000-submodel case.
 Expected outputs were captured from the unmodified pinned legacy revision before refactoring.
 Optional R and actual multi-process checks are explicit:
@@ -123,3 +134,5 @@ SUBSAMP_TEST_MPI=1 python -m pytest tests/test_mpi.py -q
 See [benchmark instructions](benchmarks/README.md) for the paired audit and the prepared larger evaluation.
 The [reference behavior specification](docs/REFERENCE_BEHAVIOR.md) and [stage 1 handoff](docs/REFERENCE_HANDOFF.md) preserve the pre-refactor evidence.
 The [refactor audit](docs/REFACTOR_AUDIT.md) records implemented repairs, measured trade-offs, verification, and remaining limits.
+
+The [revision audit](docs/REVISION_AUDIT.md) records the external-review fixes and repeated production timing against both legacy and the first refactor.

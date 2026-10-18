@@ -43,7 +43,7 @@ def test_classic_covariances_population_snr_and_panel_coverage():
     expected = dict(independent=76.01, block11=179.188515625, full90=417.657110837)
     assert len(MANIFEST["cases"]) == 25
     assert sum(case["m"] == 5000 for case in MANIFEST["cases"]) == 1
-    assert np.count_nonzero(BETA) == 10
+    assert_array_equal(BETA, [.1, .5, 1., 1.5, 2., 2.5, 3., 3.5, 4., 5.] + [0.] * 90)
     for name, signal_variance in expected.items():
         sigma = covariance(name)
         assert np.linalg.eigvalsh(sigma).min() > 0

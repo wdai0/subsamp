@@ -1,0 +1,7 @@
+{
+  "retention": "top_s",
+  "alpha": 0.05,
+  "correction": "bonferroni",
+  "family": "q",
+  "scorer": {"name": "default"}
+}

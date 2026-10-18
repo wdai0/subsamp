@@ -54,9 +54,11 @@ Use one writer per output directory; parallel chunks need separate directories.
 
 Per-case outputs include each signal's selection indicator, signal recovery, semifinalist recall, false positives, false discovery proportion, any-false-positive indicator, selection size, and exact-support indicator.
 The summary reports per-signal power, mean recovery, mean false-positive count, FDR as mean `FP/max(R,1)`, and FWER as the proportion with any false positive.
-These summaries are grouped by scenario and retention mode.
+Summaries are grouped by scenario and the complete method configuration: `n,p,s,q,m`, retention, alpha, correction method, correction family, and scorer parameters.
+The `m=5000` sentinel is a separate group from `m=120` cases.
+Dataset-level Monte Carlo standard errors use the sample standard deviation divided by the square root of the number of independent datasets; a single dataset has no estimated MCSE.
 With any failed dataset, that group's selection estimates are withheld rather than changing the denominator.
-The fixed panel is a regression check; its two or three datasets per group do not support precise statistical performance estimates.
+The fixed panel is a regression check; its one or two datasets per group do not support precise statistical performance estimates.
 
 ## Larger profile: prepared, not run at scale
 
@@ -76,3 +78,67 @@ For later scale-up, choose disjoint replicate intervals within `[0,1000)` and ke
 The full profile contains 60 million submodels per implementation per replay, or 240 million submodel fits including both implementations and the separate memory replay.
 Final regressions add two per implementation per replay per dataset.
 No cluster wrapper, submission, or broad run is started by these changes.
+
+## Method evaluation
+
+Compatibility is the default `--mode compatibility`; it requires exact feature IDs and tolerance-based numerical agreement with the pinned legacy implementation.
+Both methods' outcomes are saved alongside timing and memory measurements.
+Use `--mode evaluation` for intentional method changes:
+
+```bash
+PYTHONPATH=src:. python -m benchmarks.run_classic \
+  --mode evaluation --profile fixed \
+  --baseline-config benchmarks/methods/default-q.json \
+  --candidate-config benchmarks/methods/scaled-q.json \
+  --output output/scaled-score-evaluation
+```
+
+Both configurations explicitly specify retention, alpha, correction method, correction family (`q` semifinalists or `p` original candidates), and scorer.
+The selected profile supplies the shared `s,q,m` and ordered subsets; those values are also included in each saved method configuration.
+The evaluation mode does not import the legacy source or require MPI.
+It compares statistical methods using the current engine, while compatibility mode compares implementations of the original method.
+The example power scorer computes the average of `abs(t)**t_power / RSS**rss_power` over nonzero t-values, then multiplies by positive `scale`.
+The scale-two example is a reporting check: it changes score values while preserving ranks; it is not a proposed algorithmic improvement.
+Other scorer functions can be added explicitly to this small benchmark module without changing the package's callback interface.
+
+Evaluation records both outcomes independently, including a successful baseline if the candidate fails.
+Valid differences in scores, semifinalists, or finalists are recorded separately from failures.
+The paired summary reports candidate-minus-baseline differences and MCSEs across shared independent datasets.
+In particular, paired FDR differences use per-dataset FDP differences, not the number of repeated submodels.
+A failed pair withholds paired estimates; each method's estimates are separately withheld if that method failed on any dataset in its group.
+One writer per directory and separate directories for disjoint chunks remain required.
+These estimates do not establish post-selection error control; small smoke runs do not establish scientific improvement.
+
+## Paper-derived configuration
+
+The separately versioned `paper-profile.json` uses `s=q=30`, `m=5000`, `n=80`, `p=100`, and the same ordered ten-signal vector.
+The supplied external review is the source of the `s=q=30` specification; its linked published PDF was unavailable here and has not been independently rechecked for this revision.
+The profile prepares 1,000 datasets per scenario but requires an explicit chunk.
+To compare the two correction families with identical data and scoring:
+
+```bash
+PYTHONPATH=src:. python -m benchmarks.run_classic \
+  --mode evaluation --profile paper --scenario paper-independent --start 0 --stop 1 \
+  --baseline-config benchmarks/methods/default-q.json \
+  --candidate-config benchmarks/methods/default-p.json \
+  --output output/paper-family-smoke
+```
+
+The p-family benchmark pads untested features with p-values of one before Bonferroni/BH adjustment, preserving the declared family size without fitting an unidentifiable 100-predictor regression.
+The production package continues to adjust over semifinalists.
+Explicit method JSON overrides the profile's descriptive correction-family default so this sensitivity comparison is fully recorded.
+The existing 25 fixtures and checksums are unchanged.
+
+## Repeat production measurements or regenerate historical summaries
+
+```bash
+PYTHONPATH=src:. python -m benchmarks.measure_revision --output output/repeated-performance.json
+PYTHONPATH=src:. python -m benchmarks.reporting \
+  output/refactor-audit/final-classic output/corrected-historical-summary.json
+```
+
+The measurement command compares unmodified legacy, the committed first refactor `c881315`, and current production code on the saved 5,000-submodel sentinel.
+After one warm-up, it rotates execution order over five timing repetitions and checks each result outside the timer.
+Traced allocation and cProfile are separate replays.
+It requires the local Git history and MPI dependency for the historical adapter.
+The summary command writes a new file with source-record checksums; historical records and frozen expectations are never replaced.

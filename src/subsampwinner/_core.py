@@ -3,8 +3,8 @@
 import numpy as np
 from statsmodels.stats.multitest import multipletests
 
-from ._validation import finite_array, validate_inference
-from .least_squares import fit_least_squares
+from ._validation import finite_array, validate_data, validate_inference
+from .least_squares import _fit_submodel
 from .scoring import SubsampleStatistics
 
 
@@ -16,6 +16,13 @@ def sample_schedule(p, s, m, seed):
 
 def analyze_schedule(X, y, schedule, weights=None, repetition_ids=None):
     """Fit ordered subsets once and keep only the statistics used downstream."""
+    X, y, weights = validate_data(X, y, weights)
+    return _analyze_schedule_validated(X.copy(), y.copy(), schedule,
+                                       None if weights is None else weights.copy(), repetition_ids)
+
+
+def _analyze_schedule_validated(X, y, schedule, weights=None, repetition_ids=None):
+    """Internal path after coordinator validation/ownership; check each fit."""
     schedule = np.asarray(schedule)
     if (schedule.ndim != 2 or min(schedule.shape) < 1 or schedule.dtype.kind not in "iu" or
             np.any(schedule < 0) or np.any(schedule >= X.shape[1]) or
@@ -24,12 +31,15 @@ def analyze_schedule(X, y, schedule, weights=None, repetition_ids=None):
     t_values = np.empty(schedule.shape)
     rss, weighted_rss, df = (np.empty(len(schedule)) for _ in range(3))
     repetitions = np.arange(len(schedule)) if repetition_ids is None else np.asarray(repetition_ids)
+    if (repetitions.shape != (len(schedule),) or repetitions.dtype.kind not in "iu" or
+            np.any(repetitions < 0) or len(np.unique(repetitions)) != len(repetitions)):
+        raise ValueError("repetition_ids must be unique nonnegative integers aligned with rows")
     for row, indices in enumerate(schedule):
         try:
-            fit = fit_least_squares(X[:, indices], y, weights)
+            fit = _fit_submodel(X[:, indices], y, weights)
         except (ValueError, np.linalg.LinAlgError) as error:
             raise ValueError(f"submodel repetition {repetitions[row]}: {error}") from error
-        t_values[row] = fit.t_values[1:]
+        t_values[row] = fit.t_values
         rss[row], weighted_rss[row], df[row] = fit.rss, fit.weighted_rss, fit.df_resid
     return SubsampleStatistics(schedule, t_values, rss, repetitions, X.shape[1], df, weighted_rss)
 

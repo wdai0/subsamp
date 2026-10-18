@@ -1,0 +1,22 @@
+{
+  "pip_check": {
+    "exit_code": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": "WARNING: The directory '/Users/wei/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+  },
+  "installed_smoke": {
+    "exit_code": 0,
+    "stdout": "{\n  \"package\": \"/private/tmp/subsamp-revision-current/lib/python3.12/site-packages/subsampwinner/__init__.py\",\n  \"versions\": {\n    \"numpy\": \"2.5.4\",\n    \"scipy\": \"1.18.1\",\n    \"statsmodels\": \"0.15.0\",\n    \"pandas\": \"3.0.6\",\n    \"patsy\": \"1.0.3\"\n  },\n  \"status\": \"passed\"\n}\n",
+    "stderr": ""
+  },
+  "pytest": {
+    "exit_code": 0,
+    "stdout": "........................................................................ [ 58%]\n.s.........ss......................................                      [100%]\n=============================== warnings summary ===============================\ntests/test_contracts.py::test_callback_exception_and_final_rank_failure_are_atomic\ntests/test_contracts.py::test_rank_checked_per_fitted_subset_and_perfect_fit_rejected\ntests/test_contracts.py::test_wls_common_weight_scale_and_rank_policy\n  /Users/wei/.codex/worktrees/e10e/subsamp/src/subsampwinner/least_squares.py:64: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.\n    model = backend.fit(method=\"pinv\", cov_type=\"nonrobust\", use_t=True)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n120 passed, 3 skipped, 3 warnings in 3.93s\n",
+    "stderr": ""
+  },
+  "freeze": {
+    "exit_code": 0,
+    "stdout": "formulaic==1.2.2\niniconfig==2.3.1\ninterface_meta==2.0.1\nnarwhals==2.27.1\nnumpy==2.5.4\npackaging==26.3\npandas==3.0.6\npatsy==1.0.3\npluggy==1.7.0\nPygments==2.21.0\npytest==9.1.1\npython-dateutil==2.9.0.post0\nscipy==1.18.1\nsix==1.17.0\nstatsmodels==0.15.0\nsubsampwinner @ file:///tmp/subsamp-revision-wheels/subsampwinner-0.0.8-py3-none-any.whl#sha256=9653e8d7ae1c5c062d8e81ff8cb862168bb908a285fec8b38b55548bd242e372\ntyping_extensions==4.16.0\nwrapt==2.5.1\n",
+    "stderr": "WARNING: The directory '/Users/wei/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "completed_cases": 1,
+  "failures": 0,
+  "groups": [
+    {
+      "methods": {
+        "baseline": {
+          "alpha": 0.05,
+          "correction": "bonferroni",
+          "family": "q",
+          "m": 120,
+          "n": 80,
+          "p": 100,
+          "q": 10,
+          "retention": "top_s",
+          "s": 10,
+          "scorer": {
+            "name": "default"
+          }
+        },
+        "candidate": {
+          "alpha": 0.05,
+          "correction": "bonferroni",
+          "family": "q",
+          "m": 120,
+          "n": 80,
+          "p": 100,
+          "q": 10,
+          "retention": "top_s",
+          "s": 10,
+          "scorer": {
+            "name": "power",
+            "rss_power": 0.5,
+            "scale": 2,
+            "t_power": 1
+          }
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "paper-independent",
+        "noise_sd": 1.0
+      },
+      "datasets": 1,
+      "method_summaries": {
+        "baseline": {
+          "datasets": 1,
+          "successes": 1,
+          "failures": 0,
+          "selection_estimates": {
+            "per_signal_power": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "average_signal_recovery": 0.2,
+            "average_signal_count": 2.0,
+            "semifinalist_recall": 0.3,
+            "mean_false_positives": 0.0,
+            "fdr": 0.0,
+            "fwer": 0.0,
+            "mean_selected_size": 2.0,
+            "exact_support_frequency": 0.0
+          },
+          "monte_carlo": {
+            "per_signal_power": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "mcse": null
+            },
+            "average_signal_recovery": {
+              "mean": 0.2,
+              "mcse": null
+            },
+            "semifinalist_recall": {
+              "mean": 0.3,
+              "mcse": null
+            },
+            "mean_false_positives": {
+              "mean": 0.0,
+              "mcse": null
+            },
+            "fdr": {
+              "mean": 0.0,
+              "mcse": null
+            },
+            "fwer": {
+              "mean": 0.0,
+              "mcse": null
+            },
+            "mean_selected_size": {
+              "mean": 2.0,
+              "mcse": null
+            },
+            "exact_support_frequency": {
+              "mean": 0.0,
+              "mcse": null
+            }
+          }
+        },
+        "candidate": {
+          "datasets": 1,
+          "successes": 1,
+          "failures": 0,
+          "selection_estimates": {
+            "per_signal_power": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "average_signal_recovery": 0.2,
+            "average_signal_count": 2.0,
+            "semifinalist_recall": 0.3,
+            "mean_false_positives": 0.0,
+            "fdr": 0.0,
+            "fwer": 0.0,
+            "mean_selected_size": 2.0,
+            "exact_support_frequency": 0.0
+          },
+          "monte_carlo": {
+            "per_signal_power": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "mcse": null
+            },
+            "average_signal_recovery": {
+              "mean": 0.2,
+              "mcse": null
+            },
+            "semifinalist_recall": {
+              "mean": 0.3,
+              "mcse": null
+            },
+            "mean_false_positives": {
+              "mean": 0.0,
+              "mcse": null
+            },
+            "fdr": {
+              "mean": 0.0,
+              "mcse": null
+            },
+            "fwer": {
+              "mean": 0.0,
+              "mcse": null
+            },
+            "mean_selected_size": {
+              "mean": 2.0,
+              "mcse": null
+            },
+            "exact_support_frequency": {
+              "mean": 0.0,
+              "mcse": null
+            }
+          }
+        }
+      },
+      "valid_pairs": 1,
+      "failed_pairs": 0,
+      "valid_difference_counts": {
+        "scores": 1,
+        "semifinalists": 0,
+        "finalists": 0
+      },
+      "paired_candidate_minus_baseline": {
+        "per_signal_power": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mcse": null
+        },
+        "average_signal_recovery": {
+          "mean": 0.0,
+          "mcse": null
+        },
+        "semifinalist_recall": {
+          "mean": 0.0,
+          "mcse": null
+        },
+        "mean_false_positives": {
+          "mean": 0.0,
+          "mcse": null
+        },
+        "fdr": {
+          "mean": 0.0,
+          "mcse": null
+        },
+        "fwer": {
+          "mean": 0.0,
+          "mcse": null
+        },
+        "mean_selected_size": {
+          "mean": 0.0,
+          "mcse": null
+        },
+        "exact_support_frequency": {
+          "mean": 0.0,
+          "mcse": null
+        }
+      }
+    }
+  ]
+}

@@ -66,3 +66,8 @@ def feature_indices(indices, p):
     if np.any(array < 0) or np.any(array >= p) or np.unique(array).size != array.size:
         raise ValueError("feature indices must be unique and within the original feature range")
     return array.astype(np.intp, copy=True)
+
+
+def validate_boolean(value, name):
+    if not isinstance(value, (bool, np.bool_)):
+        raise ValueError(f"{name} must be Boolean")

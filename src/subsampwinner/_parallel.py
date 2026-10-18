@@ -3,7 +3,7 @@
 import pickle
 import numpy as np
 
-from ._core import analyze_schedule, sample_schedule
+from ._core import _analyze_schedule_validated, sample_schedule
 from .scoring import SubsampleStatistics
 
 
@@ -46,7 +46,7 @@ def analyze_parallel(comm, X, y, s, m, seed, weights=None):
     schedule = root_call(comm, "schedule", lambda: sample_schedule(X.shape[1], s, m, seed))
     repetitions = np.array_split(np.arange(len(schedule)), comm.size)[comm.rank]
     local = collective_call(comm, "submodel fitting", lambda: (
-        analyze_schedule(X, y, schedule[repetitions], weights, repetitions) if len(repetitions) else None))
+        _analyze_schedule_validated(X, y, schedule[repetitions], weights, repetitions) if len(repetitions) else None))
     batches = comm.gather(local, root=0)
 
     def combine():

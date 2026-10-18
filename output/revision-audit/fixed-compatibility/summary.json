@@ -1,0 +1,2706 @@
+{
+  "completed_cases": 25,
+  "failures": 0,
+  "groups": [
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "paper-block11-high",
+        "noise_sd": 3.0
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "semifinalist_recall": {
+            "mean": 0.75,
+            "mcse": 0.050000000000000044
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 6.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "paper-block11-low",
+        "noise_sd": 1.0
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.7,
+          "average_signal_count": 7.0,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.7,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.7,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 7.0,
+            "mcse": 0.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "stress-block11-snr1",
+        "noise_sd": 13.386131465998682,
+        "snr": 1
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.1,
+          "average_signal_count": 1.0,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.5,
+          "fdr": 0.25,
+          "fwer": 0.5,
+          "mean_selected_size": 1.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.1,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.5,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "fdr": {
+            "mean": 0.25,
+            "mcse": 0.25
+          },
+          "fwer": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "mean_selected_size": {
+            "mean": 1.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "stress-block11-snr20",
+        "noise_sd": 2.9932299913721967,
+        "snr": 20
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.75,
+          "average_signal_count": 7.5,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.75,
+            "mcse": 0.050000000000000044
+          },
+          "semifinalist_recall": {
+            "mean": 0.75,
+            "mcse": 0.050000000000000044
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 7.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "stress-block11-snr5",
+        "noise_sd": 5.986459982744393,
+        "snr": 5
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.3,
+          "average_signal_count": 3.0,
+          "semifinalist_recall": 0.6499999999999999,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 3.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.3,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 3.0,
+            "mcse": 0.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "full90",
+        "name": "stress-full90-snr1",
+        "noise_sd": 20.43666095126599,
+        "snr": 1
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.0,
+          "average_signal_count": 0.0,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.75,
+            "mcse": 0.050000000000000044
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "full90",
+        "name": "stress-full90-snr20",
+        "noise_sd": 4.569776312014627,
+        "snr": 20
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.05,
+          "average_signal_count": 0.5,
+          "semifinalist_recall": 0.9,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.05,
+            "mcse": 0.05
+          },
+          "semifinalist_recall": {
+            "mean": 0.9,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "full90",
+        "name": "stress-full90-snr5",
+        "noise_sd": 9.139552624029253,
+        "snr": 5
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.05,
+          "average_signal_count": 0.5,
+          "semifinalist_recall": 0.8500000000000001,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.05,
+            "mcse": 0.05
+          },
+          "semifinalist_recall": {
+            "mean": 0.8500000000000001,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "paper-independent",
+        "noise_sd": 1.0
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.55,
+          "average_signal_count": 5.5,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.55,
+            "mcse": 0.04999999999999999
+          },
+          "semifinalist_recall": {
+            "mean": 0.55,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 5.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "stress-independent-snr1",
+        "noise_sd": 8.718371407550839,
+        "snr": 1
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.35,
+          "average_signal_count": 3.5,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.5,
+          "fdr": 0.16666666666666666,
+          "fwer": 0.5,
+          "mean_selected_size": 4.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.35,
+            "mcse": 0.15
+          },
+          "semifinalist_recall": {
+            "mean": 0.5,
+            "mcse": 0.09999999999999998
+          },
+          "mean_false_positives": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "fdr": {
+            "mean": 0.16666666666666666,
+            "mcse": 0.16666666666666666
+          },
+          "fwer": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "mean_selected_size": {
+            "mean": 4.0,
+            "mcse": 1.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "stress-independent-snr20",
+        "noise_sd": 1.9494871120374198,
+        "snr": 20
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.55,
+          "average_signal_count": 5.5,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.55,
+            "mcse": 0.04999999999999999
+          },
+          "semifinalist_recall": {
+            "mean": 0.55,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 5.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "stress-independent-snr5",
+        "noise_sd": 3.8989742240748395,
+        "snr": 5
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.0,
+            1.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.55,
+          "average_signal_count": 5.5,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 5.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.55,
+            "mcse": 0.14999999999999997
+          },
+          "semifinalist_recall": {
+            "mean": 0.55,
+            "mcse": 0.14999999999999997
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 5.5,
+            "mcse": 1.4999999999999998
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "paper-block11-high",
+        "noise_sd": 3.0
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.6499999999999999,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "semifinalist_recall": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 6.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "paper-block11-low",
+        "noise_sd": 1.0
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.75,
+          "average_signal_count": 7.5,
+          "semifinalist_recall": 0.75,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.75,
+            "mcse": 0.050000000000000044
+          },
+          "semifinalist_recall": {
+            "mean": 0.75,
+            "mcse": 0.050000000000000044
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 7.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "stress-block11-snr1",
+        "noise_sd": 13.386131465998682,
+        "snr": 1
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "average_signal_recovery": 0.15000000000000002,
+          "average_signal_count": 1.5000000000000002,
+          "semifinalist_recall": 0.4,
+          "mean_false_positives": 0.5,
+          "fdr": 0.25,
+          "fwer": 0.5,
+          "mean_selected_size": 2.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.5
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.5
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.15000000000000002,
+            "mcse": 0.05
+          },
+          "semifinalist_recall": {
+            "mean": 0.4,
+            "mcse": 0.1
+          },
+          "mean_false_positives": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "fdr": {
+            "mean": 0.25,
+            "mcse": 0.25
+          },
+          "fwer": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "mean_selected_size": {
+            "mean": 2.0,
+            "mcse": 0.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "stress-block11-snr20",
+        "noise_sd": 2.9932299913721967,
+        "snr": 20
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.7,
+          "average_signal_count": 7.0,
+          "semifinalist_recall": 0.8,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 7.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.7,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.8,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 7.0,
+            "mcse": 0.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "block11",
+        "name": "stress-block11-snr5",
+        "noise_sd": 5.986459982744393,
+        "snr": 5
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            1.0,
+            1.0,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.4,
+          "average_signal_count": 4.0,
+          "semifinalist_recall": 0.6,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 4.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              1.0,
+              1.0,
+              0.5,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.4,
+            "mcse": 0.1
+          },
+          "semifinalist_recall": {
+            "mean": 0.6,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 4.0,
+            "mcse": 1.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "full90",
+        "name": "stress-full90-snr1",
+        "noise_sd": 20.43666095126599,
+        "snr": 1
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.0,
+          "average_signal_count": 0.0,
+          "semifinalist_recall": 0.5,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.5,
+            "mcse": 0.09999999999999998
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "full90",
+        "name": "stress-full90-snr20",
+        "noise_sd": 4.569776312014627,
+        "snr": 20
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.15000000000000002,
+          "average_signal_count": 1.5000000000000002,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 1.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.15000000000000002,
+            "mcse": 0.05
+          },
+          "semifinalist_recall": {
+            "mean": 0.7,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 1.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "full90",
+        "name": "stress-full90-snr5",
+        "noise_sd": 9.139552624029253,
+        "snr": 5
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0
+          ],
+          "average_signal_recovery": 0.05,
+          "average_signal_count": 0.5,
+          "semifinalist_recall": 0.6,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 0.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.05,
+            "mcse": 0.05
+          },
+          "semifinalist_recall": {
+            "mean": 0.6,
+            "mcse": 0.09999999999999998
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "paper-independent",
+        "noise_sd": 1.0
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            1.0,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.4,
+          "average_signal_count": 4.0,
+          "semifinalist_recall": 0.44999999999999996,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 4.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              1.0,
+              0.5,
+              0.5,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.5,
+              0.0,
+              0.5,
+              0.5,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.4,
+            "mcse": 0.19999999999999998
+          },
+          "semifinalist_recall": {
+            "mean": 0.44999999999999996,
+            "mcse": 0.15
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 4.0,
+            "mcse": 2.0
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "stress-independent-snr1",
+        "noise_sd": 8.718371407550839,
+        "snr": 1
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            1.0,
+            0.5,
+            1.0
+          ],
+          "average_signal_recovery": 0.4,
+          "average_signal_count": 4.0,
+          "semifinalist_recall": 0.55,
+          "mean_false_positives": 0.5,
+          "fdr": 0.1,
+          "fwer": 0.5,
+          "mean_selected_size": 4.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              1.0,
+              0.5,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.5,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.4,
+            "mcse": 0.0
+          },
+          "semifinalist_recall": {
+            "mean": 0.55,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "fdr": {
+            "mean": 0.1,
+            "mcse": 0.1
+          },
+          "fwer": {
+            "mean": 0.5,
+            "mcse": 0.5
+          },
+          "mean_selected_size": {
+            "mean": 4.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "stress-independent-snr20",
+        "noise_sd": 1.9494871120374198,
+        "snr": 20
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.5,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.6499999999999999,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.5,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "semifinalist_recall": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 6.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 120,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "stress-independent-snr5",
+        "noise_sd": 3.8989742240748395,
+        "snr": 5
+      },
+      "summary": {
+        "datasets": 2,
+        "successes": 2,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.5,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6499999999999999,
+          "average_signal_count": 6.499999999999999,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.5,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.5,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": [
+              0.0,
+              0.0,
+              0.5,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "average_signal_recovery": {
+            "mean": 0.6499999999999999,
+            "mcse": 0.04999999999999999
+          },
+          "semifinalist_recall": {
+            "mean": 0.7,
+            "mcse": 0.0
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": 0.0
+          },
+          "mean_selected_size": {
+            "mean": 6.5,
+            "mcse": 0.5
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": 0.0
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 5000,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "all",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "paper-independent",
+        "noise_sd": 1.0
+      },
+      "summary": {
+        "datasets": 1,
+        "successes": 1,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.6,
+          "average_signal_count": 6.0,
+          "semifinalist_recall": 0.6,
+          "mean_false_positives": 0.0,
+          "fdr": 0.0,
+          "fwer": 0.0,
+          "mean_selected_size": 6.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": null
+          },
+          "average_signal_recovery": {
+            "mean": 0.6,
+            "mcse": null
+          },
+          "semifinalist_recall": {
+            "mean": 0.6,
+            "mcse": null
+          },
+          "mean_false_positives": {
+            "mean": 0.0,
+            "mcse": null
+          },
+          "fdr": {
+            "mean": 0.0,
+            "mcse": null
+          },
+          "fwer": {
+            "mean": 0.0,
+            "mcse": null
+          },
+          "mean_selected_size": {
+            "mean": 6.0,
+            "mcse": null
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": null
+          }
+        }
+      }
+    },
+    {
+      "configuration": {
+        "alpha": 0.05,
+        "correction": "bonferroni",
+        "family": "q",
+        "m": 5000,
+        "n": 80,
+        "p": 100,
+        "q": 10,
+        "retention": "top_s",
+        "s": 10,
+        "scorer": {
+          "name": "default"
+        }
+      },
+      "scenario": {
+        "covariance": "independent",
+        "name": "paper-independent",
+        "noise_sd": 1.0
+      },
+      "summary": {
+        "datasets": 1,
+        "successes": 1,
+        "failures": 0,
+        "selection_estimates": {
+          "per_signal_power": [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "average_signal_recovery": 0.7,
+          "average_signal_count": 7.0,
+          "semifinalist_recall": 0.7,
+          "mean_false_positives": 1.0,
+          "fdr": 0.125,
+          "fwer": 1.0,
+          "mean_selected_size": 8.0,
+          "exact_support_frequency": 0.0
+        },
+        "monte_carlo": {
+          "per_signal_power": {
+            "mean": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "mcse": null
+          },
+          "average_signal_recovery": {
+            "mean": 0.7,
+            "mcse": null
+          },
+          "semifinalist_recall": {
+            "mean": 0.7,
+            "mcse": null
+          },
+          "mean_false_positives": {
+            "mean": 1.0,
+            "mcse": null
+          },
+          "fdr": {
+            "mean": 0.125,
+            "mcse": null
+          },
+          "fwer": {
+            "mean": 1.0,
+            "mcse": null
+          },
+          "mean_selected_size": {
+            "mean": 8.0,
+            "mcse": null
+          },
+          "exact_support_frequency": {
+            "mean": 0.0,
+            "mcse": null
+          }
+        }
+      }
+    }
+  ]
+}

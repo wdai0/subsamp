@@ -1,0 +1,366 @@
+{
+  "legacy_commit": "e0366d3bcf917b875b982214a2ef342f8d463e42",
+  "previous_commit": "c8813150ea84c32d564e032f5718ecb36408e2a7",
+  "case": {
+    "name": "paper-independent",
+    "covariance": "independent",
+    "noise_sd": 1.0,
+    "id": "paper-independent-m5000",
+    "data_seed": 91999,
+    "schedule_seed": 92999,
+    "s": 10,
+    "q": 10,
+    "m": 5000,
+    "file": "paper-independent-m5000.npz",
+    "sha256": "cce694705270ad46da3cac533af4fa43ed8286aabdf7a5c1d700e2350b64afae",
+    "baseline_seconds": 0.5602084579877555,
+    "metrics": {
+      "all": {
+        "signal_selected": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "signal_recovery": 0.6,
+        "semifinalist_recall": 0.6,
+        "false_positives": 0,
+        "false_discovery_proportion": 0.0,
+        "any_false_positive": 0,
+        "selected_size": 6,
+        "exact_support": 0
+      },
+      "top_s": {
+        "signal_selected": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "signal_recovery": 0.7,
+        "semifinalist_recall": 0.7,
+        "false_positives": 1,
+        "false_discovery_proportion": 0.125,
+        "any_false_positive": 1,
+        "selected_size": 8,
+        "exact_support": 0
+      }
+    }
+  },
+  "measurements": {
+    "legacy": {
+      "seconds": [
+        0.435287791013252,
+        0.4388391670072451,
+        0.4482154999859631,
+        0.44606262500747107,
+        0.4420937499962747
+      ],
+      "median_seconds": 0.4420937499962747,
+      "min_seconds": 0.435287791013252,
+      "max_seconds": 0.4482154999859631,
+      "python_traced_peak_bytes": 18587548,
+      "profile_total_calls": 1496098,
+      "profile_top_cumulative": [
+        {
+          "function": "run_classic.py:46:legacy_run",
+          "calls": 1,
+          "seconds": 0.6573210420000001
+        },
+        {
+          "function": "run_classic.py:48:<listcomp>",
+          "calls": 1,
+          "seconds": 0.6508452920000001
+        },
+        {
+          "function": "subsamp.py:52:_analyze_subsample",
+          "calls": 5000,
+          "seconds": 0.6464749200000001
+        },
+        {
+          "function": "subsamp.py:80:_fit_base_model",
+          "calls": 5000,
+          "seconds": 0.5281715570000001
+        },
+        {
+          "function": "linear_model.py:266:fit",
+          "calls": 5002,
+          "seconds": 0.307450276
+        },
+        {
+          "function": "tools.py:255:pinv_extended",
+          "calls": 5002,
+          "seconds": 0.175745004
+        },
+        {
+          "function": "linalg.py:1499:svd",
+          "calls": 10004,
+          "seconds": 0.151689284
+        },
+        {
+          "function": "linear_model.py:918:__init__",
+          "calls": 5002,
+          "seconds": 0.140168141
+        },
+        {
+          "function": "linear_model.py:732:__init__",
+          "calls": 5002,
+          "seconds": 0.131851254
+        },
+        {
+          "function": "linear_model.py:202:__init__",
+          "calls": 5002,
+          "seconds": 0.11601348600000001
+        },
+        {
+          "function": "model.py:269:__init__",
+          "calls": 5002,
+          "seconds": 0.11241567400000001
+        },
+        {
+          "function": "subsamp.py:100:_compute_model_statistics",
+          "calls": 5000,
+          "seconds": 0.108459025
+        },
+        {
+          "function": "model.py:92:__init__",
+          "calls": 5002,
+          "seconds": 0.105571945
+        },
+        {
+          "function": "model.py:134:_handle_data",
+          "calls": 5002,
+          "seconds": 0.09629865200000001
+        },
+        {
+          "function": "data.py:667:handle_data",
+          "calls": 5002,
+          "seconds": 0.091478949
+        }
+      ]
+    },
+    "previous": {
+      "seconds": [
+        0.7780839589831885,
+        0.787371374986833,
+        0.790256040985696,
+        0.7925629169913009,
+        0.7987641249783337
+      ],
+      "median_seconds": 0.790256040985696,
+      "min_seconds": 0.7780839589831885,
+      "max_seconds": 0.7987641249783337,
+      "python_traced_peak_bytes": 2231532,
+      "profile_total_calls": 2861884,
+      "profile_top_cumulative": [
+        {
+          "function": "run_classic.py:57:candidate_run",
+          "calls": 1,
+          "seconds": 1.1912765
+        },
+        {
+          "function": "_core.py:17:analyze_schedule",
+          "calls": 1,
+          "seconds": 1.18999725
+        },
+        {
+          "function": "least_squares.py:36:fit_least_squares",
+          "calls": 5002,
+          "seconds": 1.1703303150000002
+        },
+        {
+          "function": "wrapper.py:21:__getattribute__",
+          "calls": 70044,
+          "seconds": 0.39909520800000003
+        },
+        {
+          "function": "linear_model.py:266:fit",
+          "calls": 5002,
+          "seconds": 0.329707324
+        },
+        {
+          "function": "~:0:<built-in method builtins.getattr>",
+          "calls": 80059,
+          "seconds": 0.32788826200000004
+        },
+        {
+          "function": "model.py:1443:pvalues",
+          "calls": 5002,
+          "seconds": 0.25495137
+        },
+        {
+          "function": "_distn_infrastructure.py:2128:sf",
+          "calls": 5002,
+          "seconds": 0.226754111
+        },
+        {
+          "function": "tools.py:255:pinv_extended",
+          "calls": 5002,
+          "seconds": 0.185044495
+        },
+        {
+          "function": "linalg.py:1499:svd",
+          "calls": 10004,
+          "seconds": 0.159493627
+        },
+        {
+          "function": "linear_model.py:918:__init__",
+          "calls": 5002,
+          "seconds": 0.15316417300000001
+        },
+        {
+          "function": "linear_model.py:732:__init__",
+          "calls": 5002,
+          "seconds": 0.143564002
+        },
+        {
+          "function": "linear_model.py:202:__init__",
+          "calls": 5002,
+          "seconds": 0.126269805
+        },
+        {
+          "function": "model.py:269:__init__",
+          "calls": 5002,
+          "seconds": 0.12213694700000001
+        },
+        {
+          "function": "model.py:92:__init__",
+          "calls": 5002,
+          "seconds": 0.114360949
+        }
+      ]
+    },
+    "revised": {
+      "seconds": [
+        0.5391012500040233,
+        0.5529148329806048,
+        0.5517204579955433,
+        0.5428495410014875,
+        0.5550670830125455
+      ],
+      "median_seconds": 0.5517204579955433,
+      "min_seconds": 0.5391012500040233,
+      "max_seconds": 0.5550670830125455,
+      "python_traced_peak_bytes": 2217214,
+      "profile_total_calls": 2152071,
+      "profile_top_cumulative": [
+        {
+          "function": "run_classic.py:57:candidate_run",
+          "calls": 1,
+          "seconds": 0.9443208750000001
+        },
+        {
+          "function": "_core.py:17:analyze_schedule",
+          "calls": 1,
+          "seconds": 0.942972417
+        },
+        {
+          "function": "_core.py:24:_analyze_schedule_validated",
+          "calls": 1,
+          "seconds": 0.942863458
+        },
+        {
+          "function": "least_squares.py:96:_fit_submodel",
+          "calls": 5000,
+          "seconds": 0.9269522800000001
+        },
+        {
+          "function": "least_squares.py:50:_fit_validated",
+          "calls": 5002,
+          "seconds": 0.9061138820000001
+        },
+        {
+          "function": "linear_model.py:266:fit",
+          "calls": 5002,
+          "seconds": 0.344038809
+        },
+        {
+          "function": "tools.py:255:pinv_extended",
+          "calls": 5002,
+          "seconds": 0.20086583900000002
+        },
+        {
+          "function": "linear_model.py:918:__init__",
+          "calls": 5002,
+          "seconds": 0.18192764900000002
+        },
+        {
+          "function": "linalg.py:1499:svd",
+          "calls": 10004,
+          "seconds": 0.175060331
+        },
+        {
+          "function": "linear_model.py:732:__init__",
+          "calls": 5002,
+          "seconds": 0.172756073
+        },
+        {
+          "function": "wrapper.py:21:__getattribute__",
+          "calls": 80064,
+          "seconds": 0.155657591
+        },
+        {
+          "function": "linear_model.py:202:__init__",
+          "calls": 5002,
+          "seconds": 0.155026835
+        },
+        {
+          "function": "model.py:269:__init__",
+          "calls": 5002,
+          "seconds": 0.151177041
+        },
+        {
+          "function": "model.py:92:__init__",
+          "calls": 5002,
+          "seconds": 0.143670291
+        },
+        {
+          "function": "model.py:134:_handle_data",
+          "calls": 5002,
+          "seconds": 0.133574937
+        }
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.10.7",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "packages": {
+      "numpy": "1.26.4",
+      "scipy": "1.13.0",
+      "statsmodels": "0.14.2",
+      "pandas": "2.3.3",
+      "patsy": "1.0.3"
+    }
+  },
+  "source_hashes": {
+    "src/subsampwinner/GenerateData.py": "df263d306fc5eead00cb7bdfead3070a30eaa20ac694a3a86c8a1a3db5e059cf",
+    "src/subsampwinner/SubsampDoubleAssurance.py": "10d579f0dcc1ae0e5b2c5cbdcff74ad89116f6a7a81986645511d5b8a666a3b3",
+    "src/subsampwinner/__init__.py": "bd321e209a27cfffc0e75d06c9bba126326c72ee0316982c935fcdbfd41e0e6c",
+    "src/subsampwinner/_core.py": "f9f05b916aece7af33a22e443ab2b2de3fd76576db9f0766135f7c8b8922fcde",
+    "src/subsampwinner/_parallel.py": "d3bde544dac70f6c87d7e840fcfb8f126d4bf0190a77787759b9faca2f85fe1c",
+    "src/subsampwinner/_validation.py": "5b38de19b5e50c129153918f076fc8ceac75a0d183f97c7be0b96a31dfbbc39f",
+    "src/subsampwinner/least_squares.py": "9631796b607a146afee212625d779b24b387c05cf84aa8fce2222a31aacc5029",
+    "src/subsampwinner/scoring.py": "85824c188dd116cd3ed72227d4fd9a2dec69892f79eba4bb78ec7335f74ab945",
+    "src/subsampwinner/subsamp.py": "1ecbf3759b8b2405fdf503c3f15ca26bccdf9c71efbd581aabd26f9fd69287c7",
+    "benchmarks/classic.py": "d23f2649b8aabe9fd0a9d111f0020c0457057fbd9064809663d2f95e6605f3d6",
+    "benchmarks/evaluation.py": "509ecb99cce870bd4670986efd3be3571b26f85973497758f5fe9385581aec62",
+    "benchmarks/measure_revision.py": "8613913c76653b75df707d106501c3f3adb333b5d8a84612785b4ca606221d89",
+    "benchmarks/reference.py": "de7f8f61e028a0438c4d9859037306e84aa0b96e27be45232db234c26d5a2ad9",
+    "benchmarks/reporting.py": "a8c7b881b25e85d1d0239b271daaf9091488eceb4c596bd27da605a811b58b6c",
+    "benchmarks/run_classic.py": "23c459648a89d8799af4e261591b5131da86971ae0ce826bfb72cd339ca8af58"
+  },
+  "validation": "All timed outputs matched legacy; feature IDs exact, statistics within frozen-panel tolerances."
+}

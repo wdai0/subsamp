@@ -96,7 +96,10 @@ without padding each submodel to the full candidate dimension.
 
 def score_features(statistics: SubsampleStatistics, scorer: Optional[Scorer] = None) -> np.ndarray:
     """Validate and own callback output without altering its scores."""
-    scores = finite_array((default_scorer if scorer is None else scorer)(statistics), "scorer output")
+    scores = np.asarray((default_scorer if scorer is None else scorer)(statistics))
+    if scores.dtype.kind not in "iuf":
+        raise ValueError("scorer output must have a real integer or floating dtype")
+    scores = finite_array(scores, "scorer output")
     if scores.shape != (statistics.n_features,):
         raise ValueError("scorer must return one finite score per original feature")
     return scores.copy()

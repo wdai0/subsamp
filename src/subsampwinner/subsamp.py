@@ -3,9 +3,9 @@
 import logging
 import numpy as np
 
-from ._core import analyze_schedule, filter_pvalues, sample_schedule
+from ._core import _analyze_schedule_validated, analyze_schedule, filter_pvalues, sample_schedule
 from ._validation import (feature_indices, finite_array, positive_integer, validate_data,
-                          validate_inference, validate_seed, validate_sizes)
+                          validate_boolean, validate_inference, validate_seed, validate_sizes)
 from .least_squares import fit_least_squares
 from .scoring import (SubsampleStatistics, default_scorer, rank_features,
                       retain_submodels, score_features)
@@ -35,7 +35,8 @@ WLS weights are positive inverse-variance weights with conventional t inference.
     def __repr__(self):
         return f"SWA(s={self.s}, m={self.m}, qnum={self.qnum}, seed={self.seed})"
 
-    def _validate_fit(self, X, y, weights, alpha, method):
+    def _validate_fit(self, X, y, weights, alpha, method, use_top_s=False):
+        validate_boolean(use_top_s, "use_top_s")
         X, y, weights = validate_data(X, y, weights)
         validate_sizes(self.s, self.m, self.qnum, *X.shape)
         validate_seed(self.seed)
@@ -62,17 +63,19 @@ All models contribute by default; top-s retention uses raw RSS even in WLS.
 In MPI, call on every rank with the same data/options. Root owns the schedule
 and calls the scorer once; all ranks receive complete fitted state or an error.
         """
+        validate_boolean(parallel, "parallel")
+        validate_boolean(use_top_s, "use_top_s")
         if parallel:
             from ._parallel import analyze_parallel, collective_call, communicator, root_call
             comm = communicator()
-            X, y, weights = collective_call(comm, "validation", lambda: self._validate_fit(X, y, weights, alpha, method))
+            X, y, weights = collective_call(comm, "validation", lambda: self._validate_fit(X, y, weights, alpha, method, use_top_s))
             statistics = analyze_parallel(comm, X, y, self.s, self.m, self.seed, weights)
             state = root_call(comm, "scoring and final fitting", lambda: self._finish(
                 X, y, weights, statistics, use_top_s, alpha, method))
         else:
-            X, y, weights = self._validate_fit(X, y, weights, alpha, method)
+            X, y, weights = self._validate_fit(X, y, weights, alpha, method, use_top_s)
             schedule = sample_schedule(X.shape[1], self.s, self.m, self.seed)
-            statistics = analyze_schedule(X, y, schedule, weights)
+            statistics = _analyze_schedule_validated(X, y, schedule, weights)
             state = self._finish(X, y, weights, statistics, use_top_s, alpha, method)
         self.__dict__.update(state)
         logging.info("SWA selects the following feature indices: %s.", self.finalists)
@@ -81,6 +84,10 @@ and calls the scorer once; all ranks receive complete fitted state or an error.
     # Compatibility adapters: explicit requests for dense legacy result lists
     # may use O(mp) space; fit() never constructs them.
     def _subsample_s_features(self, p, s):
+        positive_integer(p, "p")
+        positive_integer(s, "s")
+        if s > p:
+            raise ValueError("s must not exceed p")
         # Standalone helper calls advance a private stream. Full fits reset their
         # separate schedule stream to self.seed for historical repeatability.
         if not hasattr(self, "_helper_rng") or self._helper_seed != self.seed:
@@ -142,6 +149,7 @@ and calls the scorer once; all ranks receive complete fitted state or an error.
 
     def subsample_anlysis(self, X, y, parallel=False, weights=None):
         """Legacy spelling and dense-list return retained; use fit for compact storage."""
+        validate_boolean(parallel, "parallel")
         if parallel:
             from ._parallel import analyze_parallel, collective_call, communicator
             comm = communicator()
@@ -149,7 +157,7 @@ and calls the scorer once; all ranks receive complete fitted state or an error.
             statistics = analyze_parallel(comm, X, y, self.s, self.m, self.seed, weights)
         else:
             X, y, weights = self._validate_fit(X, y, weights, .05, "bonferroni")
-            statistics = analyze_schedule(X, y, sample_schedule(X.shape[1], self.s, self.m, self.seed), weights)
+            statistics = _analyze_schedule_validated(X, y, sample_schedule(X.shape[1], self.s, self.m, self.seed), weights)
         return self._dense_results(statistics)
 
     def _compute_feature_weights(self, results, option_s=None):
@@ -157,6 +165,7 @@ and calls the scorer once; all ranks receive complete fitted state or an error.
         return default_scorer(retain_submodels(self._compact_results(results), option_s))
 
     def _select_semifinalist(self, results, qnum, use_top_s=False):
+        validate_boolean(use_top_s, "use_top_s")
         retained = retain_submodels(self._compact_results(results), self.s if use_top_s else None)
         scores = score_features(retained, self.scorer)
         return rank_features(scores, qnum), scores

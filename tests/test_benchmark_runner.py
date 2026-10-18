@@ -40,7 +40,7 @@ def test_resume_retains_failure_and_rejects_mismatched_provenance(tmp_path, monk
     assert len(calls) == 1  # Resume does not replace or retry a failed dataset.
     summary = json.loads((tmp_path / "audit/summary.json").read_text())
     assert summary["failures"] == 1
-    assert summary["scenarios"]["paper-independent"]["all"]["selection_estimates"] is None
+    assert summary["groups"][0]["summary"]["selection_estimates"] is None
     manifest = tmp_path / "audit/run.json"
     contents = json.loads(manifest.read_text())
     contents["reference_base"] = "different revision"

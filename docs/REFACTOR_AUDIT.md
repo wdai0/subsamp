@@ -1,5 +1,8 @@
 # Refactor implementation and audit
 
+Historical report for `c881315`; its measurements and original implementation descriptions are preserved.
+See [the October 18 revision audit](REVISION_AUDIT.md) for subsequent fixes and current measurements.
+
 Implemented and checked locally on October 17, 2026, in branch `codex/reference-core-repair` and worktree `/Users/wei/.codex/worktrees/e10e/subsamp`.
 The reference base is `e0366d3bcf917b875b982214a2ef342f8d463e42`.
 The two supplied review texts govern this implementation, including custom scoring now and an owned least-squares boundary backed by statsmodels.

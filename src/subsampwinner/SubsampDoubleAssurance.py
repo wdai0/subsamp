@@ -4,7 +4,7 @@ import math
 import numpy as np
 
 from .subsamp import subsamp
-from ._validation import (positive_integer, validate_data, validate_inference,
+from ._validation import (positive_integer, validate_boolean, validate_data, validate_inference,
                           validate_seed, validate_sizes)
 
 
@@ -36,6 +36,7 @@ than clip. ``final_range`` is the last evaluated [lower, center, upper].
 ``history_`` contains independent snapshots after a successful call. As before,
 return_objects=True returns the three-key result dictionary; otherwise print it.
         """
+        validate_boolean(return_objects, "return_objects")
         X, y, weights = validate_data(X, y, weights)
         positive_integer(I_max, "I_max")
         validate_sizes(s0, self.m, s0 if self.qnum is None else self.qnum, *X.shape)
@@ -74,11 +75,11 @@ return_objects=True returns the three-key result dictionary; otherwise print it.
             if not union:
                 reason = "empty_selection"
                 break
-            if score >= T:
-                reason = "stability_threshold"
-                break
             if lower == upper:
                 reason = "collapsed_range"
+                break
+            if score >= T:
+                reason = "stability_threshold"
                 break
             contributions = [self.calculate_individual_stability(selected, union) for selected in selections]
             s0 = [s0, lower, upper][int(np.argmax(contributions))]
