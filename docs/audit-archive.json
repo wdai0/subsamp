@@ -1,0 +1,12 @@
+{
+  "commit": "18f982bd1d07e35d9a1dc46616593c88905c2d42",
+  "local_tag": "audit/refactor-18f982b",
+  "archive_name": "subsampwinner-audit-18f982b.zip",
+  "sha256": "93326f41d041b5c4325aeb04dea73bc4a9626a20563c9d7cc492a8ad6e644e21",
+  "bytes": 3249894,
+  "files": 155,
+  "prefix": "subsampwinner-audit-18f982b/",
+  "scope": "Complete committed source, tests, documentation, and generated audit results",
+  "storage": "Local Downloads directory; not uploaded",
+  "recover_command": "git archive --format=zip --prefix=subsampwinner-audit-18f982b/ --output=subsampwinner-audit-18f982b.zip 18f982bd1d07e35d9a1dc46616593c88905c2d42"
+}

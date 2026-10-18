@@ -1,2 +1,8 @@
 include README.md
 include LICENSE
+graft src
+graft tests
+graft benchmarks
+recursive-include docs *.md *.txt *.json
+prune output
+global-exclude *.py[cod] .DS_Store

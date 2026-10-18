@@ -2,6 +2,7 @@
 
 Implemented locally on October 18, 2026, in `codex/reference-core-repair`, starting from `c8813150ea84c32d564e032f5718ecb36408e2a7`.
 This revision addresses the supplied external review without changing the default SWA algorithm, its scoring equation, the statsmodels fitting engine, or the frozen reference data.
+Generated evidence was subsequently moved into the [preserved audit archive](AUDIT_ARCHIVE.md#revision-audit); the results below describe the verified revision checkpoint.
 The earlier [implementation audit](REFACTOR_AUDIT.md) and [performance diagnosis](PERFORMANCE_MEASUREMENTS.md) remain historical reports for the first refactor.
 
 ## Evaluation and changes
@@ -74,7 +75,7 @@ No additional caching or custom numerical kernel was added after profiling.
 These are local measurements on macOS arm64 with Python 3.10.7, NumPy 1.26.4, SciPy 1.13.0, and statsmodels 0.14.2.
 Traced allocation is not whole-process resident memory and does not include every native-library allocation.
 Five repeats on one workload do not establish a cross-platform speed guarantee.
-Raw measurements, all repetitions, environment metadata, and source hashes are in [production-performance.json](../output/revision-audit/production-performance.json).
+Raw measurements, all repetitions, environment metadata, and source hashes are in [production-performance.json](AUDIT_ARCHIVE.md#revision-audit).
 The reproducible command is in [benchmark instructions](../benchmarks/README.md).
 
 ## Verification results
@@ -105,8 +106,8 @@ The complete pytest suites test the source checkout under each environment.
 The runtime metadata retains its existing lower bounds; no permanent pandas upper bound was added.
 These three combinations are verified locally; every possible dependency combination and Python/platform version is not covered.
 
-Logs and full environment freezes are in [environment-reference.json](../output/revision-audit/environment-reference.json), [environment-current.json](../output/revision-audit/environment-current.json), and [environment-pandas3.json](../output/revision-audit/environment-pandas3.json).
-The combined result is in [combined-tests.json](../output/revision-audit/combined-tests.json).
+Logs and full environment freezes are in [environment-reference.json](AUDIT_ARCHIVE.md#revision-audit), [environment-current.json](AUDIT_ARCHIVE.md#revision-audit), and [environment-pandas3.json](AUDIT_ARCHIVE.md#revision-audit).
+The combined result is in [combined-tests.json](AUDIT_ARCHIVE.md#revision-audit).
 The workflow builds an installed wheel and runs the serial reference suite on pull requests and pushes, using these three dependency strategies.
 It has not yet run on GitHub, and making its status checks mandatory still requires branch-protection settings.
 
@@ -131,8 +132,8 @@ The historical independent/top-s records now give:
 | `s=q=10,m=5000` | 1 | 0.70 | 0.125 |
 
 The original pooled recovery of 0.50 is superseded as a summary of a configured procedure.
-The regenerated [historical summary](../output/revision-audit/corrected-historical-summary.json) records source-record hashes; the old records and fixtures remain intact.
-Fresh compatibility output is in [fixed-compatibility/summary.json](../output/revision-audit/fixed-compatibility/summary.json).
+The regenerated [historical summary](AUDIT_ARCHIVE.md#revision-audit) records source-record hashes; the old records and fixtures remain intact.
+Fresh compatibility output is in [fixed-compatibility/summary.json](AUDIT_ARCHIVE.md#revision-audit).
 
 The separate [paper profile](../benchmarks/paper-profile.json) has `s=q=30` and requires explicit evaluation configs to expose the `q` versus `p=100` correction-family choice.
 Its source is the supplied review; the review's linked published PDF and detailed memo were not attached and have not been independently checked here.

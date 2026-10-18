@@ -245,7 +245,11 @@ except ImportError as error:
 else:
     raise AssertionError('expected optional dependency error')
 '''
-    environment = dict(os.environ, PYTHONPATH=str(Path(__file__).resolve().parents[1] / "src"))
+    environment = dict(os.environ)
+    if environment.get("SUBSAMP_TEST_INSTALLED") == "1":
+        environment.pop("PYTHONPATH", None)
+    else:
+        environment["PYTHONPATH"] = str(Path(__file__).resolve().parents[1] / "src")
     subprocess.run([sys.executable, "-c", script], env=environment, check=True, timeout=30, capture_output=True)
 
 

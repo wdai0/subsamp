@@ -78,7 +78,15 @@ def test_paired_fdp_mcse_uses_independent_dataset_differences():
 
 
 def test_historical_summary_separates_budgets_without_rewriting_records(tmp_path):
-    source = ROOT / 'output/refactor-audit/final-classic'
+    # The frozen panel already records these historical outcomes. Reconstruct
+    # only the three input records needed to test reporting, not a whole audit.
+    source = tmp_path / 'records'
+    source.mkdir()
+    manifest = json.loads((ROOT / 'tests/reference/classic/manifest.json').read_text())
+    for case in manifest['cases']:
+        if case['name'] == 'paper-independent':
+            record = dict(case=case, error=None, modes=case['metrics'])
+            (source / (case['id'] + '.json')).write_text(json.dumps(record))
     before = {path.name: path.read_bytes() for path in source.glob('*.json')}
     output = tmp_path / 'corrected.json'
     regenerate(source, output)

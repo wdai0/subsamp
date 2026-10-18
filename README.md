@@ -119,7 +119,7 @@ python -m pytest -q
 
 `tests/requirements.txt` freezes the complete serial reference stack for CPython 3.10, including pandas and patsy.
 The PR/push workflow also tests fresh current dependencies and the minimum statsmodels backend with pandas 3 on Python 3.12.
-It builds a wheel, checks an isolated installed-package fit, and runs the full serial suite.
+It builds a source distribution and a wheel from that source distribution, checks their contents, and runs the full serial suite against the installed wheel using the source archive's tests.
 Branch protection must separately require the workflow checks in repository settings.
 
 The normal command includes the 25 saved classic datasets and schedules, including a 5,000-submodel case.
@@ -136,3 +136,11 @@ The [reference behavior specification](docs/REFERENCE_BEHAVIOR.md) and [stage 1 
 The [refactor audit](docs/REFACTOR_AUDIT.md) records implemented repairs, measured trade-offs, verification, and remaining limits.
 
 The [revision audit](docs/REVISION_AUDIT.md) records the external-review fixes and repeated production timing against both legacy and the first refactor.
+
+## Repository and release contents
+
+Code, tests, the essential frozen reference fixtures, benchmark tools/configurations, and concise documentation stay together in this repository.
+Generated reports and run outputs belong in the ignored `output/` directory and are archived separately when needed.
+The full pre-cleanup evidence is retained in the [versioned audit archive](docs/AUDIT_ARCHIVE.md).
+The wheel contains only the runtime package and metadata; the source distribution also includes the complete tests, fixtures, and benchmark helpers needed for verification.
+See [packaging and release checks](docs/PACKAGING.md) for local build commands and the checks required before publication.

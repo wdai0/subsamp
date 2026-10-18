@@ -2,6 +2,7 @@
 
 Historical report for `c881315`; its measurements and original implementation descriptions are preserved.
 See [the October 18 revision audit](REVISION_AUDIT.md) for subsequent fixes and current measurements.
+Paths under `output/` refer to files in the [preserved audit archive](AUDIT_ARCHIVE.md#original-audit).
 
 This report accompanies the current refactor and [implementation audit](REFACTOR_AUDIT.md).
 The legacy reference is Git revision `e0366d3bcf917b875b982214a2ef342f8d463e42`.

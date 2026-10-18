@@ -134,7 +134,7 @@ The existing 25 fixtures and checksums are unchanged.
 ```bash
 PYTHONPATH=src:. python -m benchmarks.measure_revision --output output/repeated-performance.json
 PYTHONPATH=src:. python -m benchmarks.reporting \
-  output/refactor-audit/final-classic output/corrected-historical-summary.json
+  /tmp/subsampwinner-audit-18f982b/output/refactor-audit/final-classic output/corrected-historical-summary.json
 ```
 
 The measurement command compares unmodified legacy, the committed first refactor `c881315`, and current production code on the saved 5,000-submodel sentinel.
@@ -142,3 +142,7 @@ After one warm-up, it rotates execution order over five timing repetitions and c
 Traced allocation and cProfile are separate replays.
 It requires the local Git history and MPI dependency for the historical adapter.
 The summary command writes a new file with source-record checksums; historical records and frozen expectations are never replaced.
+
+Generated results are ignored under `output/`; the package's tests depend only on the frozen fixtures in `tests/reference/`.
+The historical records used by the final command are in the [audit archive](../docs/AUDIT_ARCHIVE.md); extract that snapshot to `/tmp` before regenerating its summary.
+Keep new configurations and scripts in Git and archive large run records separately with their commit and checksums.

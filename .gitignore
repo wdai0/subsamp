@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+# Generated reports and experiment output are archived separately from source.
+/output/
+
 __pycache__/
 *.py[cod]
 *$py.class
