@@ -40,7 +40,7 @@ Verify that the source archive is self-contained and the installed wheel passes 
 ```bash
 mkdir -p /tmp/subsamp-package-source
 tar -xzf dist/*.tar.gz -C /tmp/subsamp-package-source
-cd /tmp/subsamp-package-source/subsampwinner-0.0.8
+cd /tmp/subsamp-package-source/subsampwinner-0.1.0
 SUBSAMP_TEST_INSTALLED=1 python -m pytest -q
 ```
 
@@ -50,10 +50,13 @@ R and actual MPI checks retain their explicit opt-in requirements.
 
 ## Continuous validation and publication
 
-PR/push CI builds both distributions, checks their contents and metadata, installs the wheel, and runs the full serial suite from the extracted source distribution across the existing three dependency strategies.
-The publication workflow checks out the published release's tag, builds and verifies the artifacts, runs the same installed-wheel suite with the frozen reference stack, and uploads those exact artifacts only after the checks pass.
+PR/push CI builds both distributions, checks their contents and metadata, installs the wheel, and runs the full serial suite from the extracted source distribution in four environments.
+Python 3.10 uses the complete reference lock; Python 3.9 uses the same numerical versions with compatible test-tool dependencies because parts of the Python 3.10 tooling lock require Python 3.10.
+Python 3.12 tests both fresh current dependencies and the minimum statsmodels backend with pandas 3.
+The publication workflow checks out the published release's tag, builds and verifies the artifacts, requires the tag to match the installed package version, runs the same installed-wheel suite with the frozen reference stack, and uploads those exact artifacts only after the checks pass.
 It retains the repository's existing PyPI credential configuration.
-Publishing a release remains a deliberate remote action; this cleanup does not create one, increment the package version, or upload to PyPI.
-Before an eventual release, select an unused version, update its metadata, verify the tagged code, and publish that version's release.
+Publishing a release is the upload trigger.
+Before each release, select an unused version, update its metadata, require successful PR checks and review, verify the tagged code, and publish that version's release.
 
-These workflows are locally prepared; GitHub execution and required branch checks have not been configured or verified by this cleanup.
+Check GitHub's results for the exact revision being released; local results alone do not establish that the hosted workflow passes.
+Required branch checks are configured separately through repository settings.

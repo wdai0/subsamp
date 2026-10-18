@@ -6,11 +6,14 @@ The implementation separates subset sampling, regression, retention, scoring, an
 ## Install and run
 
 Python 3.9 or newer is required.
-For this development branch, install from the checkout:
+Install the released package:
 
 ```bash
-python -m pip install -e .
+python -m pip install subsampwinner
 ```
+
+For development, clone the repository and run `python -m pip install -e .`.
+See the [0.1.0 release notes](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/RELEASE_NOTES.md) for compatibility changes and validation limits.
 
 ```python
 import numpy as np
@@ -68,7 +71,7 @@ Statsmodels is the initial fitting engine.
 Robust covariance, alternative weight interpretations, and a replacement solver require explicit extensions to that contract.
 The public boundary owns inputs retained by the returned model; reusing caller arrays cannot change later diagnostics.
 Repeated subset fits use the same numerical acceptance checks but do not calculate unused p-values.
-See the [review revisions and validation](docs/REVISION_AUDIT.md) and [original implementation audit](docs/REFACTOR_AUDIT.md).
+See the [review revisions and validation](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REVISION_AUDIT.md) and [original implementation audit](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFACTOR_AUDIT.md).
 
 ## Adaptive assurance and compatibility
 
@@ -101,7 +104,7 @@ The old unstructured generator recipe can produce an invalid covariance; these d
 ## Optional MPI
 
 ```bash
-python -m pip install -e '.[mpi]'
+python -m pip install 'subsampwinner[mpi]'
 mpiexec -n 3 python your_script.py
 ```
 
@@ -118,7 +121,7 @@ python -m pytest -q
 ```
 
 `tests/requirements.txt` freezes the complete serial reference stack for CPython 3.10, including pandas and patsy.
-The PR/push workflow also tests fresh current dependencies and the minimum statsmodels backend with pandas 3 on Python 3.12.
+The PR/push workflow also tests the reference numerical dependencies on Python 3.9 with compatible test tooling, fresh current dependencies on Python 3.12, and the minimum statsmodels backend with pandas 3 on Python 3.12.
 It builds a source distribution and a wheel from that source distribution, checks their contents, and runs the full serial suite against the installed wheel using the source archive's tests.
 Branch protection must separately require the workflow checks in repository settings.
 
@@ -131,16 +134,16 @@ SUBSAMP_CRAN_SOURCE=/path/to/pinned/subsamp.R python -m pytest tests/test_cran_r
 SUBSAMP_TEST_MPI=1 python -m pytest tests/test_mpi.py -q
 ```
 
-See [benchmark instructions](benchmarks/README.md) for the paired audit and the prepared larger evaluation.
-The [reference behavior specification](docs/REFERENCE_BEHAVIOR.md) and [stage 1 handoff](docs/REFERENCE_HANDOFF.md) preserve the pre-refactor evidence.
-The [refactor audit](docs/REFACTOR_AUDIT.md) records implemented repairs, measured trade-offs, verification, and remaining limits.
+See [benchmark instructions](https://github.com/wdai0/subsamp/blob/v0.1.0/benchmarks/README.md) for the paired audit and the prepared larger evaluation.
+The [reference behavior specification](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFERENCE_BEHAVIOR.md) and [stage 1 handoff](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFERENCE_HANDOFF.md) preserve the pre-refactor evidence.
+The [refactor audit](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFACTOR_AUDIT.md) records implemented repairs, measured trade-offs, verification, and remaining limits.
 
-The [revision audit](docs/REVISION_AUDIT.md) records the external-review fixes and repeated production timing against both legacy and the first refactor.
+The [revision audit](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REVISION_AUDIT.md) records the external-review fixes and repeated production timing against both legacy and the first refactor.
 
 ## Repository and release contents
 
 Code, tests, the essential frozen reference fixtures, benchmark tools/configurations, and concise documentation stay together in this repository.
 Generated reports and run outputs belong in the ignored `output/` directory and are archived separately when needed.
-The full pre-cleanup evidence is retained in the [versioned audit archive](docs/AUDIT_ARCHIVE.md).
+The full pre-cleanup evidence is retained in the [versioned audit archive](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/AUDIT_ARCHIVE.md).
 The wheel contains only the runtime package and metadata; the source distribution also includes the complete tests, fixtures, and benchmark helpers needed for verification.
-See [packaging and release checks](docs/PACKAGING.md) for local build commands and the checks required before publication.
+See [packaging and release checks](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/PACKAGING.md) for local build commands and the checks required before publication.
