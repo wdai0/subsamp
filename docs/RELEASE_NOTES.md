@@ -1,3 +1,11 @@
+# SubsampWinner 0.1.1
+
+This maintenance release updates the package description and author metadata displayed on PyPI.
+It adds explicit citations for the Fan and Sun (2021) paper and the archived CRAN `subsamp` 0.1.0 package, including all three R package authors.
+The Python package author list is Wei Dai, Yiying Fan, and Jiayang Sun, with Wei Dai first and contribution roles stated in the README.
+Correspondence remains `wdai@gmu.edu`.
+Runtime code, dependencies, algorithms, and APIs are unchanged from 0.1.0.
+
 # SubsampWinner 0.1.0
 
 This release refactors the existing SWA implementation into separate sampling, least-squares, retention, scoring, and inference stages.

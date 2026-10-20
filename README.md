@@ -3,6 +3,20 @@
 NumPy-based feature selection with the Subsampling Winner Algorithm (SWA), conventional OLS/WLS fitting, and an adaptive assurance procedure.
 The implementation separates subset sampling, regression, retention, scoring, and significance filtering.
 
+## Credits and references
+
+SubsampWinner is a Python implementation and adaptation of the Subsampling Winner Algorithm developed by Yiying Fan and Jiayang Sun.
+The published paper and the legacy CRAN package `subsamp` provide its methodological and implementation references.
+
+Package authors, in order: **Wei Dai, Yiying Fan, Jiayang Sun**.
+Wei Dai develops and maintains the Python implementation; Yiying Fan and Jiayang Sun developed the original methodology.
+For correspondence about this Python package, contact [Wei Dai](mailto:wdai@gmu.edu).
+
+1. Fan, Yiying, and Jiayang Sun (2021). “Subsampling from features in large regression to find ‘winning features’.” *Statistical Analysis and Data Mining: The ASA Data Science Journal*, **14**(2), 168–184. [doi:10.1002/sam.11499](https://doi.org/10.1002/sam.11499).
+2. Fan, Yiying, Jiayang Sun, and Xingye Qiao (2017). *subsamp: Subsample Winner Algorithm for Variable Selection in Linear Regression with a Large Number of Variables*, R package version 0.1.0. [CRAN source archive](https://cran.r-project.org/src/contrib/Archive/subsamp/) · [Package authors and metadata](https://github.com/cran/subsamp/blob/e56d150a9cd566067dec47197546f70548d906ac/DESCRIPTION).
+
+The Python adaptation's behavior and differences from these references are documented in the [reference behavior specification](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/REFERENCE_BEHAVIOR.md).
+
 ## Install and run
 
 Python 3.9 or newer is required.
@@ -13,7 +27,7 @@ python -m pip install subsampwinner
 ```
 
 For development, clone the repository and run `python -m pip install -e .`.
-See the [0.1.0 release notes](https://github.com/wdai0/subsamp/blob/v0.1.0/docs/RELEASE_NOTES.md) for compatibility changes and validation limits.
+See the [release notes](https://github.com/wdai0/subsamp/blob/v0.1.1/docs/RELEASE_NOTES.md) for version history, compatibility changes, and validation limits.
 
 ```python
 import numpy as np
