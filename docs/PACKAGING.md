@@ -40,7 +40,7 @@ Verify that the source archive is self-contained and the installed wheel passes 
 ```bash
 mkdir -p /tmp/subsamp-package-source
 tar -xzf dist/*.tar.gz -C /tmp/subsamp-package-source
-cd /tmp/subsamp-package-source/subsampwinner-0.1.0
+cd /tmp/subsamp-package-source/subsampwinner-0.1.1
 SUBSAMP_TEST_INSTALLED=1 python -m pytest -q
 ```
 
